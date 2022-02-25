@@ -7,7 +7,6 @@ import { rgba } from 'polished';
 const FooterWidget = ({ title, items }) => {
   return (
     <Box sx={styles.footerWidget}>
-      <Heading as="h4">{title}</Heading>
       <ul>
         {items.map(({ path, label, icon }, i) => (
           <li key={i}>
@@ -33,11 +32,12 @@ const styles = {
     },
     ul: {
       listStyle: 'none',
-      margin: '28px 0 0',
+      margin: '0',
       padding: 0,
       li: {
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
         img: {
           mr: '15px',
         },

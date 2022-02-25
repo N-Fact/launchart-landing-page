@@ -6,9 +6,9 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import SectionHeading from 'components/section-heading';
 import BlogPost from 'components/cards/blog-post';
 
-import thumb1 from 'assets/images/blog/1.png';
-import thumb2 from 'assets/images/blog/2.png';
-import thumb3 from 'assets/images/blog/3.png';
+import thumb1 from 'assets/images/blog/devdawrf.png';
+import thumb2 from 'assets/images/blog/leeroy.png';
+import thumb3 from 'assets/images/blog/uykusuz.png';
 
 const data = [
   {
@@ -16,21 +16,21 @@ const data = [
     thumb: thumb1,
     commentCount: 22,
     link: '#!',
-    title: `How to work with prototype design with adobe xd featuring tools`,
+    title: `DevDwarf – Chief Technology Officer`,
   },
   {
     id: 2,
     thumb: thumb2,
     commentCount: 15,
     link: '#!',
-    title: `Create multiple artboard by using figma prototyping development`,
+    title: `UykusuzTraderNFT – Chief Marketing Officer`,
   },
   {
     id: 3,
     thumb: thumb3,
     commentCount: 18,
     link: '#!',
-    title: `Convert your web layout theming easily with sketch zeplin extension`,
+    title: `LeeroyJenkins – Chief Community Officer`,
   },
 ];
 
@@ -83,9 +83,12 @@ const Blog = () => {
       <Container>
         <SectionHeading
           sx={styles.heading}
-          title="Popular blog post we update everyday"
-          description="Focus only on the meaning, we take care of the design. As soon as the meeting end you can export in one click."
-        />
+          title="About us"
+          description="Our Motto ; Stop being a consumer, be a producer. Give back to the community by helping and leading them"/>
+           <SectionHeading
+          sx={styles.title}
+          title="Launchart has 3 founders experienced in Web3 and NFT Trading"
+          description=""/>
         <Slider sx={styles.grid} {...settings}>
           {data?.map((post) => (
             <BlogPost key={post.id} post={post} />
@@ -99,16 +102,22 @@ const Blog = () => {
 export default Blog;
 
 const styles = {
+  title: {
+    maxWidth: [300, 300, 660, 500, null, 'none'],
+    h2: {
+      fontSize: ['24px', '24px', '24px', '32px', null, null, '30px'],
+    },
+  },
   heading: {
-    mb: [30, 30, 30, 50, 60],
+    mb: [30, 30, 30, 50, 10],
     maxWidth: [300, 300, 660, 500, null, 'none'],
     h2: {
       fontSize: ['24px', '24px', '24px', '32px', null, null, '40px'],
     },
     p: {
-      lineHeight: [2.48],
+      lineHeight: [1.48],
       maxWidth: [520],
-      m: ['10px auto 0'],
+      m: ['20px auto 0'],
     },
   },
   grid: {

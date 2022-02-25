@@ -24,14 +24,14 @@ const data = [
     icon: icon2,
     path: '#!',
     title: 'Safe and Secure Minting',
-    description: `Get your info tests delivered at home collect a sample from the your task.`,
+    description: `No need to worry about connecting your wallet to thousand different websites. One site for all your needs`,
   },
   {
     id: 3,
     icon: icon3,
     path: '#!',
-    title: 'Secure Transaction',
-    description: `Get your info tests delivered at home collect a sample from the your task.`,
+    title: 'Fast and stable system infrastructure',
+    description: `We are working with industry leads in system infrastructures. No more overload or problem with minting.`,
   },
   
 ];

@@ -22,7 +22,7 @@ const styles = {
   heading: {
     textAlign: 'center',
     maxWidth: 660,
-    margin: '0 auto 60px',
+    margin: '0 auto 30px',
   },
   title: {
     fontFamily: 'Roboto, sans-serif',
@@ -39,6 +39,6 @@ const styles = {
     color: 'heading',
     fontSize: ['14px', '14px', '16px'],
     lineHeight: [1.16, 1.16, 1.4],
-    mt: '10px',
+    mt: '20px',
   },
 };

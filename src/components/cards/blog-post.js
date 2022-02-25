@@ -15,10 +15,6 @@ const BlogPost = ({ post }) => {
         <Heading as="h3">
           <Link path={post.link}>{post?.title}</Link>
         </Heading>
-        <Text as="span" sx={styles.commentCount}>
-          <Image src={chat} alt="chat icon" />
-          {post?.commentCount} Comments
-        </Text>
       </Box>
     </Box>
   );
@@ -31,11 +27,11 @@ const styles = {
     m: [0, 0, 0, '0 15px', 0],
     figure: {
       alignItems: 'flex-start',
-      mb: ['10px', null, null, '15px', '25px'],
+      mb: ['20px', null, null, '15px', '25px'],
     },
     h3: {
       fontWeight: 500,
-      fontSize: [18, null, null, null, null, null, 20],
+      fontSize: [16, null, null, null, null, null, 20],
       lineHeight: 1.5,
       a: {
         cursor: 'pointer',

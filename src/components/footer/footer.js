@@ -16,14 +16,9 @@ export default function Footer() {
             <Box sx={styles.logo}>
               <Logo />
             </Box>
-            <Box sx={styles.terms}>
-              <Link path="#!">Terms of use</Link>
-              <Text as="span">|</Text>
-              <Link path="#!">Privacy</Link>
-            </Box>
-            <Text as="p" sx={styles.copyright}>
-              Copyright by {new Date().getFullYear()} RedQ, Inc
-            </Text>
+            {/* <Text as="p" sx={styles.copyright}>
+              Copyright by {new Date().getFullYear()} Launc, Inc
+            </Text> */}
           </Box>
           {menuItems.map(({ id, title, items }) => (
             <FooterWidget key={id} title={title} items={items} />
@@ -36,14 +31,14 @@ export default function Footer() {
 
 const styles = {
   footerTopInner: {
-    gap: [30, 30, 50, '20px 50px', 17, 50],
+    gap: [30, 30, 10, '20px 50px', 17, 10],
     display: ['grid'],
     gridTemplateColumns: [
       'repeat(2, 1fr)',
       'repeat(2, 1fr)',
       'repeat(2, 1fr)',
       'repeat(4, 1fr)',
-      'repeat(5, 1fr)',
+      'repeat(7, 1fr)',
     ],
   },
   footerInner: {
@@ -51,11 +46,11 @@ const styles = {
     display: ['block', 'block', 'flex'],
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '35px 0 40px',
+    padding: '15px 0 10px',
   },
   about: {
-    gridRow: ['3/4', '3/4', '1/1', '3/4', 'unset'],
-    gridColumn: ['1/3', '1/3', '1/2', '1/5', 'unset'],
+    gridRow: ['3/4', '3/4', '1/1', '3/4', '1/5'],
+    gridColumn: ['1/3', '1/3', '1/2', '1/5', '1/2'],
   },
   logo: {
     textAlign: ['center', 'center', 'left', 'center'],
