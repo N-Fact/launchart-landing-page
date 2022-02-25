@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Box, Heading, Image } from 'theme-ui';
-import { Link } from 'components/link';
+import { LinkFooter } from 'components/link';
 import { rgba } from 'polished';
 
 const FooterWidget = ({ title, items }) => {
@@ -11,7 +11,7 @@ const FooterWidget = ({ title, items }) => {
         {items.map(({ path, label, icon }, i) => (
           <li key={i}>
             {icon && <Image src={icon} alt={label} />}
-            <Link path={path} key={i} label={label} variant="footer" />
+            <LinkFooter path={path} key={i} label={label} variant="footer" />
           </li>
         ))}
       </ul>
@@ -44,6 +44,7 @@ const styles = {
       },
       a: {
         color: rgba('#02073E', 0.8),
+        textDecoration:'none'
       },
     },
   },

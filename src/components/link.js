@@ -30,14 +30,20 @@ export function NavLink({ path, label, children, ...rest }) {
   );
 }
 
-export function Link({ path, label, children, ...rest }) {
+export function Link({  path, label, children, ...rest }) {
   return (
     <NextLink href={path}>
       <A {...rest}>{children ? children : label}</A>
     </NextLink>
   );
 }
-
+export function LinkFooter({  path, label, children, ...rest }) {
+  return (
+    <NextLink href={path}>
+      <A  href={path} >{children ? children : label}</A>
+    </NextLink>
+  );
+}
 export function LearnMore({ path, label, children, ...rest }) {
   return (
     <NextLink href={path}>

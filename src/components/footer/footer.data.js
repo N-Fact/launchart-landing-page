@@ -20,7 +20,7 @@ export const menuItems = [
     items: [
       {
         path: '#!',
-        label: 'Launchpad',
+        label: 'Upcoming',
       },
     ],
   },
@@ -30,7 +30,7 @@ export const menuItems = [
     items: [
       {
         path: '#!',
-        label: 'Upcoming',
+        label: 'Past',
       },
     ],
   },
@@ -39,8 +39,8 @@ export const menuItems = [
     title: '',
     items: [
       {
-        path: '#!',
-        label: 'Past',
+        path: '#services',
+        label: 'Launchpad',
       },
     ],
   },
@@ -49,7 +49,7 @@ export const menuItems = [
     title: '',
     items: [
       {
-        path: '#!',
+        path: '#blog',
         label: 'About',
       },
     ],

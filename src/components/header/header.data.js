@@ -16,7 +16,7 @@ export default [
     label: 'Launchpad',
   },
   {
-    path: 'blog',
+    path: '',
     label: 'Application Form',
   },
   {
