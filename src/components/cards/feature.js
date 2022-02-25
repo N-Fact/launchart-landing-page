@@ -25,6 +25,9 @@ const styles = {
       minWidth: [70],
       mr: ['30px'],
     },
+    img :{
+      maxWidth:'90px'
+    },
     h3: {
       fontSize: '18px',
       lineHeight: 1.28,

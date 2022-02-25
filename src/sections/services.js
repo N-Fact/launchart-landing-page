@@ -4,10 +4,12 @@ import { jsx, Box, Container } from 'theme-ui';
 import SectionHeading from 'components/section-heading';
 import Feature from 'components/cards/feature';
 
-import individual from 'assets/images/icons/repots.svg';
-import team from 'assets/images/icons/Marketing.svg';
-import org from 'assets/images/icons/help.svg';
-import community from 'assets/images/icons/community.svg';
+import individual from 'assets/images/icons/icon1.png';
+import marketing from 'assets/images/icons/icon4.png';
+import allon from 'assets/images/icons/icon2.png';
+import community from 'assets/images/icons/icon5.png';
+import roadmap from 'assets/images/icons/icon6.png';
+import branding from 'assets/images/icons/icon3.png';
 
 const data = [
   {
@@ -18,31 +20,31 @@ const data = [
   },
   {
     id: 2,
-    icon: team,
+    icon: marketing,
     title: 'Marketing',
     description: `You can get advice from our Marketing experts directly.`,
   },
   {
     id: 3,
-    icon: org,
+    icon: community,
     title: 'Community Management',
     description: `Our team is always ready to help you with your socials and Discord management.`,
   },
   {
     id: 4,
-    icon: community,
+    icon: roadmap,
     title: 'Project Roadmap',
     description: `Think about getting pieces of advice from experienced people in the industry, for the most important part of your Project.Worthless, isn’t it?`,
   },
   {
     id: 5,
-    icon: community,
+    icon: branding,
     title: 'Branding',
     description: `Be the one in the many. Direct spotlights on your Project. Create your art and make branding with us.`,
   },
   {
     id: 6,
-    icon: community,
+    icon: allon,
     title: 'All in one place',
     description: `All of the above and all the things you can think about in your Project are covered by our support and our team is always ready to help you.`,
   },

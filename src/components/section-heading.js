@@ -22,7 +22,7 @@ const styles = {
   heading: {
     textAlign: 'center',
     maxWidth: 660,
-    margin: '0 auto 30px',
+    margin: '0 auto 40px',
   },
   title: {
     fontFamily: 'Roboto, sans-serif',

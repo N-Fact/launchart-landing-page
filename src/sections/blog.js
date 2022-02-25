@@ -117,7 +117,7 @@ const styles = {
     p: {
       lineHeight: [1.48],
       maxWidth: [520],
-      m: ['20px auto 0'],
+      m: ['20px auto 40px'],
     },
   },
   grid: {

@@ -31,20 +31,7 @@ const Banner = () => {
             Your story begins here. Launchart is the easiest way to launch your one-of-a-kind NFT collection. 
             </Text>
             <Box sx={styles.subscribe}>
-              <Label  variant="styles.srOnly">
-              Welcome to the one-stop solution for all your needs.
-              </Label>
-              {/* <Input
-                id="email"
-                type="email"
-                placeholder="Enter Email address"
-              />
-              <Button variant="primary">Subscribe</Button> */}
               <Button variant="primary">Get Free</Button>
-
-              <Label  variant="styles.srOnly">
-              First launchpad in Avalanche that only focuses on your needs.
-              </Label>
             </Box>
           </Box>
            <Box as="figure" sx={styles.illustration}>
@@ -54,7 +41,8 @@ const Banner = () => {
             </Heading>
           </Box>
         </Box>
-        
+        <div sx={styles.bghomeoverdelay}>
+      </div>
       </Container>
     </Box>
   );
@@ -69,6 +57,27 @@ const styles = {
     backgroundPosition: 'right',
     backgroundSize: '53%',
     backgroundRepeat: 'no-repeat',
+    '@media screen and (max-width: 600px)': {
+      backgroundImage: "unset",
+      backgroundPosition: 'unset',
+      backgroundSize: 'unset',
+    },
+  },
+  bghomeoverdelay:{
+     display:'none',
+    '@media screen and (max-width: 600px)': {
+      backgroundImage: 'url("/images/banner1.png")',
+      backgroundPosition: 'right',
+      backgroundSize: 'contain',
+      backgroundRepeat: 'no-repeat',
+      position: 'absolute',
+      display:'block',
+      width: "100%",
+      height: "216px",
+      left: "0",
+      bottom: "0",
+      opacity:'0.5'
+    },
   },
   contentWrapper: {
     display: ['block', null, null, null, 'grid', 'flex'],
@@ -76,7 +85,7 @@ const styles = {
     gap: [0, 0, 0, 0, 10],
     alignItems: 'center',
     minHeight: [null, null, '100vh', '70vh', '50vh', '100vh'],
-    pt: ['40px', null, null, '130px', '25px', null, 0],
+    pt: ['70px', null, null, '130px', '25px', null, 0],
     textAlign: ['center', null, 'left'],
   },
   content: {
@@ -112,6 +121,9 @@ const styles = {
     gap: [0, 0, 0, 0, 10],
     mt: ['10px'],
     color: 'text',
+    '@media screen and (max-width: 600px)': {
+      paddingTop: "5px"
+    },
     input: {
       mr: ['15px'],
       minHeight: ['45px', null, null, 60, 50, null, 60],
@@ -175,13 +187,18 @@ const styles = {
       fontWeight: 600,
       fontSize: ['22px'],
       lineHeight: [1.26],
-      bottom: [10, null, null, '30%', '20%'],
+      bottom: [10, null, null, '30%', '10%'],
       '@media screen and (min-width: 1440px)': {
-        bottom: '30%',
-        left:'30%'
+        bottom: '12%',
+        left:'34%',
+      },
+      '@media screen and (max-width: 600px)': {
+        top: "10px",
+        bottom:'unset',
+        position:'unset'
       },
       position: 'absolute',
-      left: [0, null, null, '80%', '20%'],
+      left: [0, null, null, '80%', '25%'],
     },
   },
 };

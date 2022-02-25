@@ -54,7 +54,7 @@ export default {
     caps: '0.2em',
     heading: '-0.5px',
   },
-  space: [0, 4, 8, 12, 16, 32, 48, 64, 96, 128],
+  space: [0, 4, 8, 12, 16, 32, 28, 5, 96, 44],
   sizes: {},
   breakpoints: [
     '480px',
