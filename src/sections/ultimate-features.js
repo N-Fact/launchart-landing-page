@@ -4,8 +4,8 @@ import { jsx, Box, Container } from 'theme-ui';
 import SectionHeading from 'components/section-heading';
 import Feature from 'components/cards/feature';
 
-import icon1 from 'assets/images/icons/icon2.png';
-import icon2 from 'assets/images/icons/icon1.png';
+import icon1 from 'assets/images/icons/iconr1.png';
+import icon2 from 'assets/images/icons/iconr3.png';
 import icon3 from 'assets/images/icons/icon4.png';
 
 const data = [

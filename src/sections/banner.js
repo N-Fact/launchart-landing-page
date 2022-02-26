@@ -6,18 +6,9 @@ import {
   Container,
   Heading,
   Text,
-  Label,
-  Image,
   Button,
 } from 'theme-ui';
-import Input from 'components/input';
-import banner from 'assets/images/banner.png';
-import paypal from 'assets/images/paypal.png';
-import google from 'assets/images/google.png';
-import dropbox from 'assets/images/dropbox.png';
 import { rgba } from 'polished';
-import SubscribeUs from './subscribe-us';
-
 const Banner = () => {
   return (
     <Box as="section" id="home" sx={styles.section}>
@@ -31,7 +22,8 @@ const Banner = () => {
             Your story begins here. Launchart is the easiest way to launch your one-of-a-kind NFT collection. 
             </Text>
             <Box sx={styles.subscribe}>
-              <Button variant="primary">Get Free</Button>
+              <Button variant="primary">Application Form
+           </Button>
             </Box>
           </Box>
            <Box as="figure" sx={styles.illustration}>
@@ -53,7 +45,7 @@ export default Banner;
 const styles = {
   section: {
     backgroundColor:'rgba(252, 252, 252, 0.8)',
-    backgroundImage: 'url("/images/banner1.png")',
+    backgroundImage: 'url("/images/launchart-banner.svg")',
     backgroundPosition: 'right',
     backgroundSize: '53%',
     backgroundRepeat: 'no-repeat',
@@ -66,7 +58,7 @@ const styles = {
   bghomeoverdelay:{
      display:'none',
     '@media screen and (max-width: 600px)': {
-      backgroundImage: 'url("/images/banner1.png")',
+      backgroundImage: 'url("/images/launchart-banner.svg")',
       backgroundPosition: 'right',
       backgroundSize: 'contain',
       backgroundRepeat: 'no-repeat',
@@ -76,7 +68,9 @@ const styles = {
       height: "216px",
       left: "0",
       bottom: "0",
-      opacity:'0.5'
+      opacity:'0.5',
+      top: "50px",
+      zIndex:"-1"
     },
   },
   contentWrapper: {
@@ -98,6 +92,7 @@ const styles = {
       fontWeight: 600,
       fontSize: ['34px', '34px', '34px', '44px', '40px', '49px', '62px'],
       lineHeight: [1.26, 1.26, 1.11, 1.4, 1.11],
+      textShadow: '2px 1px #fff'
     },
     h2: {
       color: 'text',
@@ -112,6 +107,7 @@ const styles = {
       fontSize: ['14px', null, '18px', 17, '16px', '15px', '18px'],
       lineHeight: [1.87, 1.87, 2.33, 2.33, 2],
       mt: ['25px', null, null, null, 4],
+      textShadow: '2px 1px #fff'
     },
   },
   subscribe: {
@@ -195,7 +191,8 @@ const styles = {
       '@media screen and (max-width: 600px)': {
         top: "10px",
         bottom:'unset',
-        position:'unset'
+        position:'unset',
+        fontSize: ['18px'],
       },
       position: 'absolute',
       left: [0, null, null, '80%', '25%'],

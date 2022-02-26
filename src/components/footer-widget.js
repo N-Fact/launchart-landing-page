@@ -5,6 +5,7 @@ import { LinkFooter } from 'components/link';
 import { rgba } from 'polished';
 
 const FooterWidget = ({ title, items }) => {
+
   return (
     <Box sx={styles.footerWidget}>
       <ul>
@@ -44,7 +45,6 @@ const styles = {
       },
       a: {
         color: rgba('#02073E', 0.8),
-        textDecoration:'none'
       },
     },
   },

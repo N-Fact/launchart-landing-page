@@ -4,12 +4,12 @@ import { jsx, Box, Container } from 'theme-ui';
 import SectionHeading from 'components/section-heading';
 import Feature from 'components/cards/feature';
 
-import individual from 'assets/images/icons/icon1.png';
-import marketing from 'assets/images/icons/icon4.png';
-import allon from 'assets/images/icons/icon2.png';
-import community from 'assets/images/icons/icon5.png';
+import individual from 'assets/images/icons/iconr8.png';
+import marketing from 'assets/images/icons/iconr2.png';
+import allon from 'assets/images/icons/iconr4.png';
+import community from 'assets/images/icons/iconr6.png';
 import roadmap from 'assets/images/icons/icon6.png';
-import branding from 'assets/images/icons/icon3.png';
+import branding from 'assets/images/icons/iconr8.png';
 
 const data = [
   {
@@ -78,12 +78,13 @@ const styles = {
     maxWidth: ['none', null, null, 565, null, 'none'],
     h2: {
       color: 'heading',
-      fontSize: ['28px', '32px', '32px', '32px', '32px', '32px', '40px'],
+      mt:'20px',
+      fontSize: ['24px', '32px', '32px', '32px', '32px', '32px', '40px'],
     },
     P: {
       fontSize: ['16px', '16px', '16px', '16px', '14px', '16px'],
-      maxWidth: [510],
-      m: ['5px auto 0'],
+      maxWidth: [710],
+      m: ['40px auto 50px'],
       color:'rgba(52, 61, 72, 0.8)',
       fontWeight:'600'
     },

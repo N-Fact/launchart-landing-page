@@ -27,7 +27,7 @@ const styles = {
   title: {
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 600,
-    fontSize: ['28px', '32px', null, null, null, null, '40px'],
+    fontSize: ['24px', '32px', null, null, null, null, '40px'],
     lineHeight: [1.33, 1.33, 1.26],
     img: {
       ml: ['15px'],

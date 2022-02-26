@@ -13,6 +13,14 @@ import close from 'assets/images/icons/close.png';
 const DrawerNav = () => {
   const { state, dispatch } = useContext(DrawerContext);
 
+  const linkKey = {
+    Upcoming:'Upcoming',
+    Past:'Past'
+ }
+
+ const GetUrl = (label)=> {
+   return linkKey[label] ? true : false;
+ }
   // Toggle drawer
   const toggleHandler = React.useCallback(() => {
     dispatch({
@@ -52,6 +60,7 @@ const DrawerNav = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
+                className={GetUrl(label) ? "textDecoration" : ""}
               >
                 {label}
               </Link>
@@ -76,6 +85,7 @@ const styles = {
       display: 'none',
     },
   },
+ 
   drawer: {
     backgroundColor: 'white',
     width: '100%',
@@ -113,6 +123,9 @@ const styles = {
     m: 0,
     p: 0,
     'li > a': {
+      '.textDecoration':{
+        textDecoration: 'line-through !important'
+      },
       backgroundColor: 'transparent',
       color: 'heading',
       display: 'flex',

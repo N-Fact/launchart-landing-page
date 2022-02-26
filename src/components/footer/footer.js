@@ -34,7 +34,7 @@ const styles = {
     gap: [30, 30, 10, '20px 50px', 17, 10],
     display: ['grid'],
     gridTemplateColumns: [
-      'repeat(2, 1fr)',
+      'repeat(3, 1fr)',
       'repeat(2, 1fr)',
       'repeat(2, 1fr)',
       'repeat(4, 1fr)',

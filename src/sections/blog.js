@@ -23,14 +23,14 @@ const data = [
     thumb: thumb2,
     commentCount: 15,
     link: '#!',
-    title: `UykusuzTraderNFT – Chief Marketing Officer`,
+    title: `LeeroyJenkins – Chief Community Officer`,
   },
   {
     id: 3,
     thumb: thumb3,
     commentCount: 18,
     link: '#!',
-    title: `LeeroyJenkins – Chief Community Officer`,
+    title: `UykusuzTraderNFT – Chief Marketing Officer`,
   },
 ];
 
@@ -105,7 +105,7 @@ const styles = {
   title: {
     maxWidth: [300, 300, 660, 500, null, 'none'],
     h2: {
-      fontSize: ['24px', '24px', '24px', '32px', null, null, '30px'],
+      fontSize: ['16px', '24px', '24px', '32px', null, null, '30px'],
     },
   },
   heading: {

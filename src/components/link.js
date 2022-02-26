@@ -38,9 +38,17 @@ export function Link({  path, label, children, ...rest }) {
   );
 }
 export function LinkFooter({  path, label, children, ...rest }) {
+  const linkKey = {
+    Upcoming:'Upcoming',
+    Past:'Past'
+ }
+ const GetUrl = ()=> {
+   return linkKey[label] ? true : false;
+ }
+
   return (
     <NextLink href={path}>
-      <A  href={path} >{children ? children : label}</A>
+      <A  sx={GetUrl() ? styles.footerlink :'' }{...rest} href={path} >{children ? children : label}</A>
     </NextLink>
   );
 }
@@ -55,6 +63,9 @@ export function LearnMore({ path, label, children, ...rest }) {
 }
 
 const styles = {
+  footerlink : {
+    textDecoration: 'line-through'
+  },
   learnMore: {
     color: 'textWhite',
     cursor: 'pointer',
