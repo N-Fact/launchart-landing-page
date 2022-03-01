@@ -7,8 +7,7 @@ import { HiOutlineChevronRight } from 'react-icons/hi';
 
 export function NavLink({ path, label, children, ...rest }) {
   const linkKey = {
-     Upcoming:'Upcoming',
-     Past:'Past'
+     Upcoming:'Upcoming'
   }
 
   const GetUrl = ()=> {
@@ -39,8 +38,7 @@ export function Link({  path, label, children, ...rest }) {
 }
 export function LinkFooter({  path, label, children, ...rest }) {
   const linkKey = {
-    Upcoming:'Upcoming',
-    Past:'Past'
+    Upcoming:'Upcoming'
  }
  const GetUrl = ()=> {
    return linkKey[label] ? true : false;

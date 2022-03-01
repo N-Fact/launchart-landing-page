@@ -14,8 +14,7 @@ const DrawerNav = () => {
   const { state, dispatch } = useContext(DrawerContext);
 
   const linkKey = {
-    Upcoming:'Upcoming',
-    Past:'Past'
+    Upcoming:'Upcoming'
  }
 
  const GetUrl = (label)=> {

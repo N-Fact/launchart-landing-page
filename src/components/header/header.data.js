@@ -8,10 +8,6 @@ export default [
     label: 'Upcoming',
   },
   {
-    path: '',
-    label: 'Past',
-  },
-  {
     path: 'services',
     label: 'Launchpad',
   },
