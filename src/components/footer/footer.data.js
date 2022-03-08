@@ -50,12 +50,12 @@ export const menuItems = [
     title: '',
     items: [
       {
-        path: 'https://twitter.com/dickheadscrypto',
+        path: 'https://twitter.com/launchartio',
         icon: twitter,
         label: 'Twitter',
       },
       {
-        path: 'https://discord.com/invite/cryptodickheads',
+        path: 'https://discord.gg/MchGEGKa',
         icon: discord,
         label: 'Discord',
       },
