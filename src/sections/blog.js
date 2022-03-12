@@ -9,6 +9,7 @@ import BlogPost from 'components/cards/blog-post';
 import thumb1 from 'assets/images/blog/devdawrf.png';
 import thumb2 from 'assets/images/blog/leeroy.png';
 import thumb3 from 'assets/images/blog/uykusuz.png';
+import thumb4 from 'assets/images/blog/ae.png';
 
 const data = [
   {
@@ -16,21 +17,32 @@ const data = [
     thumb: thumb1,
     commentCount: 22,
     link: '#!',
-    title: `DevDwarf – Chief Technology Officer`,
+    name: `DevDwarf`,
+    title: ` Operating Officer`,
   },
   {
     id: 2,
     thumb: thumb2,
     commentCount: 15,
     link: '#!',
-    title: `LeeroyJenkins – Chief Community Officer`,
+    name: `LeeroyJenkins`,
+    title: `Chief Community Officer`,
   },
   {
     id: 3,
     thumb: thumb3,
     commentCount: 18,
     link: '#!',
-    title: `UykusuzTraderNFT – Chief Marketing Officer`,
+    name: `UykusuzTraderNFT`,
+    title: `Chief Marketing Officer`,
+  },
+  {
+    id: 4,
+    thumb: thumb4,
+    commentCount: 13,
+    link: '#!',
+    name: `Aertas`,
+    title: `Chief Technology Officer`,
   },
 ];
 
@@ -87,7 +99,7 @@ const Blog = () => {
           description="Our Motto ; Stop being a consumer, be a producer. Give back to the community by helping and leading them"/>
            <SectionHeading
           sx={styles.title}
-          title="Launchart has 3 founders experienced in Web3 and NFT Trading"
+          title="Launchart has 4 founders experienced in Web3 and NFT Trading"
           description=""/>
         <Slider sx={styles.grid} {...settings}>
           {data?.map((post) => (
@@ -122,13 +134,13 @@ const styles = {
   },
   grid: {
     gap: 30,
-    display: ['grid', null, null, 'block', 'grid'],
+    display: ['grid', 'grid', 'grid', 'grid', 'grid'],
     gridTemplateColumns: [
       'repeat(1, 1fr)',
       'repeat(1, 1fr)',
       'repeat(2, 1fr)',
       'repeat(2, 1fr)',
-      'repeat(3, 1fr)',
+      'repeat(4, 1fr)',
     ],
     m: [0, 0, 0, '0 -15px', 0],
   },

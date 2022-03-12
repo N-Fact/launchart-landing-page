@@ -21,7 +21,6 @@ export default function IndexPage() {
         {/* <WorkHard /> */}
         <UltimateFeatures />
         <Blog />
-       
       </Layout>
     </ThemeProvider>
   );

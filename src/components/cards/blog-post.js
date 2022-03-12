@@ -13,7 +13,10 @@ const BlogPost = ({ post }) => {
       </Flex>
       <Box sx={styles.meta}>
         <Heading as="h3">
-          <Link path={post.link}>{post?.title}</Link>
+          <Link path={post.link}>
+            <span>{post?.name}</span>
+            {post?.title}
+          </Link>
         </Heading>
       </Box>
     </Box>
@@ -36,6 +39,9 @@ const styles = {
       lineHeight: 1.5,
       a: {
         cursor: 'pointer',
+        span:{
+          display: 'block'
+        }
       },
     },
   },
