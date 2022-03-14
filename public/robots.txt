@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https:launchart-landing
+Host: https://startup-agency-beta.vercel.app
 
 # Sitemaps
-Sitemap: https://launchart-landing/sitemap.xml
+Sitemap: https://startup-agency-beta.vercel.app/sitemap.xml
