@@ -1,8 +1,12 @@
 import React from 'react';
-import paypal from 'assets/images/logo.png';
+import {useColorMode} from 'theme-ui'
+import logoLight from 'assets/images/logo.svg';
+import logoDark from 'assets/images/logodark.svg';
+
 const logoNew = ({ white, ...props }) => {
+  const [colorMode] = useColorMode()
   return (
-    <img src={paypal} />
+    <img src={colorMode === 'default' ? logoLight : logoDark} width={160} height={35} alt="LaunchArt Logo" />
   );
 };
 

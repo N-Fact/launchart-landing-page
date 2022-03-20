@@ -11,6 +11,7 @@ export default function Logo({ isSticky, footer, ...props }) {
     </Link>
   );
 }
+
 const styles = {
   logo: {
     alignItems: 'center',

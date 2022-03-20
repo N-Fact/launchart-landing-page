@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https:launchart-landing
+Host: https://launchart.io
 
 # Sitemaps
-Sitemap: https://launchart-landing/sitemap.xml
+Sitemap: https://launchart.io/sitemap.xml

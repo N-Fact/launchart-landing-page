@@ -1,29 +1,39 @@
 export default {
   // example colors with dark mode
+  config: {
+    initialColorModeName: 'lightmode',
+  },
   colors: {
-    text: '#343D48', // body color and primary color
-    textSecondary: '#02073E', // secondary body color
+    text: '#343d48', // body color and primary color
+    textSecondary: '#02073e', // secondary body color
     textWhite: '#fff', // secondary body color
-    heading: '#0F2137', // primary heading color
-    headingSecondary: '#343D48', // heading color
-    background: '#FFFFFF', // body background color
-    backgroundSecondary: '#F9FBFD', // secondary background color
-    borderColor: '#F3F4F5', // border color
+    heading: '#0f2137', // primary heading color
+    headingSecondary: '#343d48', // heading color
+    background: '#fff', // body background color
+    backgroundSecondary: '#f9fbfd', // secondary background color
+    borderColor: '#f3f4f5', // border color
     primary: '#e84242', // primary button and link color
-    secondary: '#EF9E48', // secondary color - can be used for hover states
-    muted: '#7B8188', // muted color
+    secondary: '#ef9e48', // secondary color - can be used for hover states
+    muted: '#7b8188', // muted color
     accent: '#609', // a contrast color for emphasizing UI
-    dark: '#10132D',
-    link: '#4F96FF', // default link color
+    dark: '#10132d',
+    link: '#4f96ff', // default link color
+    textShadow: '#1b2128', // default link color
+    logoText: '#2D2E2D', // default logo color
 
-    // highlight	a background color for highlighting text
+    // highlight a background color for highlighting text
     modes: {
       dark: {
-        text: '#fff',
-        background: '#000',
-        primary: '#0cf',
-        secondary: '#09c',
+        text: '#f5f5f5',
+        textSecondary: '#ececec',
+        background: '#343d48',
+        //primary: '#0cf',
+        //secondary: '#09c',
+        heading: '#ffc0c0', // primary heading color
+        headingSecondary: '#ff8c8c', // heading color
         muted: '#111',
+        textShadow: '#000', // default link color
+        logoText: '#f5f5f5', // default logo color
       },
     },
   },
@@ -100,7 +110,7 @@ export default {
       pb: [7, null, null, null, 8],
     },
     ultimateFeatures: {
-      backgroundColor: '#F9FAFC',
+      backgroundColor: '#f9fafc',
       pt: [7, null, null, null, null, 8],
       pb: [7, null, null, null, null, 8],
     },
@@ -113,7 +123,7 @@ export default {
       pb: [6, 6, 7, 8, null, 9],
     },
     subscribe: {
-      backgroundColor: ['#fff', '#fff', '#fff', '#F8F0EA', '#F8F0EA'],
+      backgroundColor: ['#fff', '#fff', '#fff', '#f8f0ea', '#f8f0ea'],
       pt: [7],
       pb: [7],
     },
@@ -222,7 +232,7 @@ export default {
     },
     muted: {
       variant: 'buttons.default',
-      backgroundColor: '#EDF0F2',
+      backgroundColor: '#edf0f2',
       color: 'text',
       ':hover': {
         backgroundColor: 'primary',
@@ -253,7 +263,7 @@ export default {
       flex: ['1 1 calc(50% - 16px)', '1 1 20%'],
       minHeight: 130,
       m: 2,
-      background: '#FFFFFF',
+      background: '#fff',
       border: '1px solid #EDEFF6',
       borderRadius: 5,
     },
@@ -284,7 +294,7 @@ export default {
   badges: {
     primary: {
       color: 'background',
-      bg: '#28A5FF',
+      bg: '#28a5ff',
       borderRadius: 30,
       p: '3px 11px',
       fontSize: 1,
@@ -335,7 +345,7 @@ export default {
     hr: {
       border: 0,
       borderBottom: '1px solid',
-      borderColor: '#D9E0E7',
+      borderColor: '#d9e0e7',
     },
     // also you can use other HTML elements style here
     ul: {
