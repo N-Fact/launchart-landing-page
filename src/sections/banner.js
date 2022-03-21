@@ -22,22 +22,21 @@ const Banner = () => {
                             Every story has a beginning.
                         </Heading>
                         <Text as="p">
-                            Your story begins here. Launchart is the easiest way to launch your one-of-a-kind NFT collection.
+                            Your story begins here. Launchart is the easiest way to launch your one-of-a-kind NFT
+                            collection.
                         </Text>
                         <Box sx={styles.subscribe}>
                             <Button variant="primary">Application Form
                             </Button>
                         </Box>
                     </Box>
-                    <Box as="figure" sx={styles.illustration}>
-                        {/* <Image src={banner} alt="banner" /> */}
-                        <Heading as="h1">
-                            First launchpad in Avalanche🔺 that only focuses on your needs.
-                        </Heading>
-                    </Box>
+                    <Box as="figure" sx={styles.illustration}/>
+                    {/* <Image src={banner} alt="banner" /> */}
                 </Box>
-                <div sx={styles.bghomeoverdelay}>
-                </div>
+                <Heading as="h2" sx={styles.slogan}>
+                    First launchpad in Avalanche🔺 that only focuses on your needs.
+                </Heading>
+
             </Container>
         </Box>
     );
@@ -50,7 +49,7 @@ const styles = {
         //backgroundColor:'rgba(252, 252, 252, 0.8)',
         //backgroundImage: 'url("/images/launchart-banner.svg")',
         backgroundImage: `url(${launchartBanner})`,
-        backgroundPosition: 'right',
+        backgroundPosition: ['right bottom', 'right bottom', 'right bottom', 'right bottom', 'right center', 'right center'],
         backgroundSize: '53%',
         backgroundRepeat: 'no-repeat',
         '@media screen and (max-width: 600px)': {
@@ -59,44 +58,30 @@ const styles = {
             backgroundSize: 'unset',
         },
     },
-    bghomeoverdelay: {
-        display: 'none',
-        '@media screen and (max-width: 600px)': {
-            backgroundImage: 'url("/images/launchart-banner.svg")',
-            backgroundPosition: 'right',
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat',
-            position: 'absolute',
-            display: 'block',
-            width: "100%",
-            height: "216px",
-            left: "0",
-            bottom: "0",
-            opacity: '0.5',
-            top: "50px",
-            zIndex: "-1"
-        },
-    },
+
     contentWrapper: {
-        display: ['block', null, null, null, 'grid', 'flex'],
+        display: ['block', null, null, null, 'flex', 'flex'],
         gridTemplateColumns: ['1fr 1fr', null, null, null, '0.9fr 1.1fr'],
         gap: [0, 0, 0, 0, 10],
         alignItems: 'center',
-        minHeight: [null, null, '100vh', '70vh', '50vh', '100vh'],
-        pt: ['70px', null, null, '130px', '25px', null, 0],
-        textAlign: ['center', null, 'left'],
+        minHeight: [null, '40vh', '60vh', '70vh', '80vh', '80vh'],
+        pt: ['90px', null, '60px', '70px', '25px', null, 0],
+        textAlign: ['left', null, 'left'],
     },
     content: {
-        maxWidth: [null, null, null, '55%', '100%'],
-        margin: [null, null, null, '0 auto', 0],
-        textAlign: [null, null, null, 'center', 'left'],
+        maxWidth: [null, null, null, '60%', '80%'],
+        //margin: [null, null, null, '0 auto', 0],
+        textAlign: [null, null, null, 'left', 'left'],
+        marginTop: '5rem',
+        marginBottom: '5rem',
         h1: {
             color: 'text',
             fontFamily: 'Roboto, sans-serif',
             fontWeight: 600,
             fontSize: ['34px', '34px', '34px', '44px', '40px', '49px', '62px'],
             lineHeight: [1.26, 1.26, 1.11, 1.4, 1.11],
-            textShadow: '2px 1px var(--theme-ui-colors-textShadow)'
+            textShadow: '2px 1px var(--theme-ui-colors-textShadow)',
+            //textShadow: '0 0 3px #fff'
         },
         h2: {
             color: 'text',
@@ -107,12 +92,16 @@ const styles = {
         },
         p: {
             color: 'text',
-            maxWidth: [450, null, null, 'none', 450],
+            maxWidth: [null, null, null, 'none', 450],
             fontSize: ['14px', null, '18px', 17, '16px', '15px', '18px'],
             lineHeight: [1.87, 1.87, 2.33, 2.33, 2],
             mt: ['25px', null, null, null, 4],
             textShadow: '2px 1px var(--theme-ui-colors-textShadow)'
         },
+    },
+    slogan: {
+        textAlign: 'center',
+        margin:'1rem auto 2rem auto',
     },
     subscribe: {
         alignItems: 'center',
@@ -198,7 +187,7 @@ const styles = {
                 position: 'unset',
                 fontSize: ['18px'],
             },
-            position: 'absolute',
+            //position: 'absolute',
             left: [0, null, null, '80%', '25%'],
         },
     },

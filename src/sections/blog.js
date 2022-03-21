@@ -74,18 +74,18 @@ const settings = {
             breakpoint: 100000,
             settings: 'unslick',
         },
-        {
-            breakpoint: 768,
-            settings: {
-                infinite: false,
-                slidesToShow: 2,
-                slidesToScroll: 1,
-            },
-        },
-        {
-            breakpoint: 767,
-            settings: 'unslick',
-        },
+        // {
+        //     breakpoint: 768,
+        //     settings: {
+        //         infinite: false,
+        //         slidesToShow: 2,
+        //         slidesToScroll: 1,
+        //     },
+        // },
+        // {
+        //     breakpoint: 767,
+        //     settings: 'unslick',
+        // },
     ],
 };
 
@@ -121,6 +121,7 @@ const styles = {
         },
     },
     heading: {
+        mt: [5],
         mb: [30, 30, 30, 50, 10],
         maxWidth: [300, 300, 660, 500, null, 'none'],
         h2: {

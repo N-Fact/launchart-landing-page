@@ -44,7 +44,7 @@ const styles = {
         },
       },
       a: {
-        color: rgba('#02073E', 0.8),
+        color: 'text',
       },
     },
   },

@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import {IoMdMenu} from 'react-icons/io';
+import {IoIosClose, IoMdMenu} from 'react-icons/io';
 import React, {useContext} from 'react';
 import {jsx, Box, Image} from 'theme-ui';
 import {Link} from 'react-scroll';
@@ -8,7 +8,8 @@ import {DrawerContext} from 'contexts/drawer/drawer-context';
 import Drawer from 'components/drawer';
 import Logo from 'components/logo';
 import menuItems from './header.data';
-import close from 'assets/images/icons/close.png';
+import close from 'assets/images/icons/close.svg';
+import ToggleMode from "../togglemode";
 
 const DrawerNav = () => {
     const {state, dispatch} = useContext(DrawerContext);
@@ -29,7 +30,7 @@ const DrawerNav = () => {
 
     return (
         <Drawer
-            width="340px"
+            width="320px"
             placement="right"
             drawerHandler={
                 <Box sx={styles.handler}>
@@ -40,7 +41,7 @@ const DrawerNav = () => {
             toggleHandler={toggleHandler}
             closeButton={
                 <button sx={styles.closeButton}>
-                    <Image src={close} alt="close"/>
+                    <IoIosClose size="36px"/>
                 </button>
             }
             maskStyle={styles.mask}
@@ -65,6 +66,11 @@ const DrawerNav = () => {
                             </Link>
                         </Box>
                     ))}
+                    <li style={{textAlign: "center"}}>
+                        <div style={{margin: "auto", display: "inline-block"}}>
+                            <ToggleMode/>
+                        </div>
+                    </li>
                 </Box>
 
             </Box>
@@ -81,13 +87,13 @@ const styles = {
         flexShrink: '0',
         width: '26px',
         cursor: 'pointer',
-        '@media screen and (min-width: 1024px)': {
+        '@media screen and (min-width: 1025px)': {
             display: 'none',
         },
     },
 
     drawer: {
-        backgroundColor: 'white',
+        backgroundColor: 'background',
         width: '100%',
         height: '100%',
         outline: 0,
@@ -97,8 +103,8 @@ const styles = {
     },
     close: {
         position: 'absolute',
-        top: 35,
-        right: 30,
+        top: 20,
+        right: 12,
         zIndex: '1',
     },
     closeButton: {
@@ -108,10 +114,11 @@ const styles = {
         cursor: 'pointer',
         display: 'flex',
         p: 0,
+        color: "text",
     },
     wrapper: {
         height: '100%',
-        paddingTop: 30,
+        paddingTop: 20,
         width: '100%',
     },
     logo: {
@@ -133,7 +140,7 @@ const styles = {
             minHeight: 44,
             paddingLeft: 30,
             position: 'relative',
-            transition: 'all 0.3s ease-in-out 0s',
+            //transition: 'all 0.3s ease-in-out 0s',
             '::before': {
                 backgroundColor: 'transparent',
                 content: `''`,
@@ -142,11 +149,11 @@ const styles = {
                 left: 0,
                 top: 0,
                 width: 2,
-                transition: 'all 0.3s ease-in-out 0s',
+                //transition: 'all 0.3s ease-in-out 0s',
             },
         },
         '.active': {
-            backgroundColor: '#f8f8f8',
+            backgroundColor: 'backgroundSecondary',
             '::before': {
                 backgroundColor: 'primary',
             },

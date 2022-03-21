@@ -3,7 +3,7 @@
      viewBox="0 0 160 35" style="enable-background:new 0 0 160 35;" xml:space="preserve">
 	<style>
 		.logoText{
-			fill:var(--theme-ui-colors-logoText);
+			fill:#343d48;
 		}
 	</style>
     <g>

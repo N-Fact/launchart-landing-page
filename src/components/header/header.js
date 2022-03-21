@@ -27,7 +27,9 @@ export default function Header() {
                                         ))}
                                     </Box>
                                 </Flex>
-                                <ToggleMode/>
+                                <div sx={styles.modeCont}>
+                                    <ToggleMode/>
+                                </div>
                                 <DrawerNav/>
                             </Box>
                         </Container>
@@ -67,6 +69,11 @@ const styles = {
             },
         },
     },
+    modeCont: {
+        '@media only screen and (max-width: 1024px)': {
+            display: "none"
+        }
+    },
     headerInner: {
         display: 'flex',
         alignItems: 'center',
@@ -74,7 +81,7 @@ const styles = {
         '.textDecoration': {
             textDecoration: 'line-through'
         },
-        '@media only screen and (max-width: 768px)': {
+        '@media only screen and (max-width: 1024px)': {
             '.navbar': {
                 position: 'absolute',
                 top: '100%',
@@ -87,7 +94,7 @@ const styles = {
                 opacity: 0,
                 visibility: 'hidden',
                 minHeight: 'calc(100vh - 77px)',
-                transition: 'all 0.3s ease-in-out 0s',
+                transition: 'opacity 0.3s ease-in-out 0s',
                 '&.active': {
                     opacity: 1,
                     visibility: 'visible',
