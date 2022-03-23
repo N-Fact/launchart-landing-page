@@ -1,3 +1,4 @@
+import 'assets/css/global.css'
 import { useEffect } from 'react';
 import Router from 'next/router';
 import { initGA, logPageView } from 'analytics';

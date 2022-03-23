@@ -5,14 +5,15 @@ export default {
     },
     colors: {
         text: '#343d48', // body color and primary color
-        textSecondary: '#02073e', // secondary body color
+        textSecondary: '#27323f', // secondary body color
         textWhite: '#fff', // secondary body color
         heading: '#0f2137', // primary heading color
         headingSecondary: '#343d48', // heading color
         background: '#fff', // body background color
         backgroundSecondary: '#f9fafc', // secondary background color
         borderColor: '#f3f4f5', // border color
-        primary: '#e84242', // primary button and link color
+        primary: '#E74241', // primary button and link color
+        primaryHover: '#af2c2b', // primary button and link color
         secondary: '#ef9e48', // secondary color - can be used for hover states
         muted: '#7b8188', // muted color
         accent: '#609', // a contrast color for emphasizing UI
@@ -24,11 +25,11 @@ export default {
         modes: {
             dark: {
                 text: '#f5f5f5',
-                textSecondary: '#ececec',
+                textSecondary: '#d9d9d9',
                 background: '#343d48',
                 backgroundSecondary: '#222932',
                 heading: '#b7b7b7', // primary heading color
-                headingSecondary: '#ff8c8c', // heading color
+                headingSecondary: '#9f9f9f', // heading color
                 muted: '#111',
                 textShadow: '#000', // default link color
             },
@@ -95,6 +96,7 @@ export default {
     section: {
         banner: {},
         features: {
+            position: 'relative',
             pt: [7, null, null, null, 0],
             pb: [6, null, null, null, 7, 8],
             backgroundColor: 'backgroundSecondary',
@@ -203,8 +205,9 @@ export default {
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            //transition: '0.3s ease-in-out 0s',
+            transition: 'background-color 0.2s ease-in-out 0s',
             whiteSpace: 'nowrap',
+            textShadow: 'none',
         },
         primary: {
             variant: 'buttons.default',
@@ -213,7 +216,7 @@ export default {
             minHeight: ['50px', '50px', '50px', '50px', '50px', '60px'],
             padding: ['0 25px', '0 25px', '0 25px', '0 30px'],
             '&:hover': {
-                bg: 'dark',
+                bg: 'primaryHover',
             },
         },
         primaryMd: {

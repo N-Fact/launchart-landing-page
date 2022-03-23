@@ -14,7 +14,7 @@ export const menuItems = [
             },
         ],
     },
-    {
+   {
         id: 2,
         title: '',
         items: [
@@ -30,7 +30,7 @@ export const menuItems = [
         title: '',
         items: [
             {
-                path: '#services',
+                path: '/#services',
                 label: 'Launchpad',
             },
         ],
@@ -40,8 +40,8 @@ export const menuItems = [
         title: '',
         items: [
             {
-                path: '#blog',
-                label: 'About',
+                path: '/appform',
+                label: 'Application Form',
             },
         ],
     },

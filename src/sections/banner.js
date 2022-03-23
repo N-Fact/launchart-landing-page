@@ -12,6 +12,7 @@ import {rgba} from 'polished';
 
 import launchartBanner from 'assets/images/launchart-banner.svg';
 
+
 const Banner = () => {
     return (
         <Box as="section" id="home" sx={styles.section}>
@@ -26,8 +27,10 @@ const Banner = () => {
                             collection.
                         </Text>
                         <Box sx={styles.subscribe}>
-                            <Button variant="primary">Application Form
-                            </Button>
+                            <Button variant="primary" onClick={(e) => {
+                                e.preventDefault();
+                                window.location.href = '/appform';
+                            }}>Application Form</Button>
                         </Box>
                     </Box>
                     <Box as="figure" sx={styles.illustration}/>
@@ -49,14 +52,9 @@ const styles = {
         //backgroundColor:'rgba(252, 252, 252, 0.8)',
         //backgroundImage: 'url("/images/launchart-banner.svg")',
         backgroundImage: `url(${launchartBanner})`,
-        backgroundPosition: ['right bottom', 'right bottom', 'right bottom', 'right bottom', 'right center', 'right center'],
-        backgroundSize: '53%',
+        backgroundPosition: ['50% 70%', '90% 70%', '90% 70%', '90% 70%', 'right center', 'right center'],
+        backgroundSize: ['70%', '65%', '73%', '53%', '53%', '53%'],
         backgroundRepeat: 'no-repeat',
-        '@media screen and (max-width: 600px)': {
-            backgroundImage: "unset",
-            backgroundPosition: 'unset',
-            backgroundSize: 'unset',
-        },
     },
 
     contentWrapper: {
@@ -64,9 +62,16 @@ const styles = {
         gridTemplateColumns: ['1fr 1fr', null, null, null, '0.9fr 1.1fr'],
         gap: [0, 0, 0, 0, 10],
         alignItems: 'center',
-        minHeight: [null, '40vh', '60vh', '70vh', '80vh', '80vh'],
-        pt: ['90px', null, '60px', '70px', '25px', null, 0],
+        minHeight: ['80vh', '90vh', '90vh', '90vh', '90vh', '90vh', '90vh'],
+        pt: ['70px', null, '60px', '70px', '25px', null, 0],
         textAlign: ['left', null, 'left'],
+    },
+    slogan: {
+        textAlign: 'center',
+        margin: '0',
+        minHeight: ['20vh', '10vh', '10vh', '10vh', '10vh', '10vh', '10vh'],
+        fontWeight: 600,
+        fontSize: '22px',
     },
     content: {
         maxWidth: [null, null, null, '60%', '80%'],
@@ -99,10 +104,7 @@ const styles = {
             textShadow: '2px 1px var(--theme-ui-colors-textShadow)'
         },
     },
-    slogan: {
-        textAlign: 'center',
-        margin:'1rem auto 2rem auto',
-    },
+
     subscribe: {
         alignItems: 'center',
         display: ['block', null, null, null, 'grid', 'flex'],

@@ -52,7 +52,8 @@ const data = [
 
 const Services = () => {
     return (
-        <Box as="section" id="services" variant="section.features">
+        <Box as="section" variant="section.features">
+            <a id="services" sx={styles.anchor}/>
             <Container>
                 <SectionHeading
                     sx={styles.heading}
@@ -72,6 +73,12 @@ const Services = () => {
 export default Services;
 
 const styles = {
+    anchor: {
+        display: 'block',
+        position: 'absolute',
+        top: '-60px',
+        visibility: 'hidden'
+    },
     heading: {
         marginBottom: [40],
         paddingTop: [20, 10],

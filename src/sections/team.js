@@ -89,9 +89,9 @@ const settings = {
     ],
 };
 
-const Blog = () => {
+const Team = () => {
     return (
-        <Box as="section" id="blog" sx={styles.section} variant="section.blog">
+        <Box as="section" id="team" sx={styles.section} variant="section.blog">
             <Container>
                 <SectionHeading
                     sx={styles.heading}
@@ -111,7 +111,7 @@ const Blog = () => {
     );
 };
 
-export default Blog;
+export default Team;
 
 const styles = {
     title: {

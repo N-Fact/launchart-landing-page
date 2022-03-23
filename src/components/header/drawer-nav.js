@@ -10,17 +10,11 @@ import Logo from 'components/logo';
 import menuItems from './header.data';
 import close from 'assets/images/icons/close.svg';
 import ToggleMode from "../togglemode";
+import {NavLink} from 'components/link';
 
 const DrawerNav = () => {
     const {state, dispatch} = useContext(DrawerContext);
 
-    const linkKey = {
-        Upcoming: 'Upcoming'
-    }
-
-    const GetUrl = (label) => {
-        return linkKey[label] ? true : false;
-    }
     // Toggle drawer
     const toggleHandler = React.useCallback(() => {
         dispatch({
@@ -53,17 +47,7 @@ const DrawerNav = () => {
                 <Box as="ul" sx={styles.navbar}>
                     {menuItems.map(({path, label}, i) => (
                         <Box as="li" key={i}>
-                            <Link
-                                activeClass="active"
-                                to={path}
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500}
-                                className={GetUrl(label) ? "textDecoration" : ""}
-                            >
-                                {label}
-                            </Link>
+                            <NavLink path={path} label={label} onClick={toggleHandler}/>
                         </Box>
                     ))}
                     <li style={{textAlign: "center"}}>
