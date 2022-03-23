@@ -67,7 +67,7 @@ export default function AppformIndex() {
         document.getElementById('logoMain').style.opacity = '0';
         window.scrollTo(window.scrollX, window.scrollY - 1);
         window.scrollTo(window.scrollX, window.scrollY + 1);
-        goSection(1);
+        goSection(0);
         //window.addEventListener("hashchange", onHashChanged);
 
         return () => {
