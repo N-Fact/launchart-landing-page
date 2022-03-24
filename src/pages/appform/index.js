@@ -49,6 +49,38 @@ export default function AppformIndex() {
             intViewportHeight = window.innerHeight;
             goSection(formSection);
         }
+        const prepareSideLink = () => {
+            Array.from(document.querySelectorAll('.formSection')).forEach(function (el) {
+                el.removeAttribute('id');
+            });
+            const sideNav = document.getElementById('sideNav');
+            const ul = sideNav.firstChild;
+            ul.innerHTML = "";
+            let li, a;
+            let index = 0;
+            Array.from(document.querySelectorAll('.formSection.open')).forEach(function (el) {
+                el.setAttribute('id', 'formSection' + index.toString());
+                index++;
+                li = document.createElement('li');
+                li.classList.add('side-link');
+                li.setAttribute('data-index', index.toString());
+                a = document.createElement('a');
+                a.innerHTML = index.toString();
+                a.onclick = function (e) {
+                    e.preventDefault();
+                    goSection(parseInt(this.parentNode.getAttribute('data-index')));
+                }
+                li.appendChild(a);
+                ul.appendChild(li);
+            });
+        }
+        const initialize = () => {
+            prepareSideLink();
+            window.scrollTo(window.scrollX, window.scrollY - 1);
+            window.scrollTo(window.scrollX, window.scrollY + 1);
+            goSection(1);
+        }
+        initialize();
         /* const onHashChanged = (url) => {
                      let sectionid = 0
                        if (window.location.hash) {
@@ -61,15 +93,10 @@ export default function AppformIndex() {
         };*/
         //window.addEventListener('scroll', handleScroll)
         window.addEventListener('resize', handleResize)
-
         //will be called on component mount
         document.body.style.overflow = "hidden";
         document.getElementById('logoMain').style.opacity = '0';
-        window.scrollTo(window.scrollX, window.scrollY - 1);
-        window.scrollTo(window.scrollX, window.scrollY + 1);
-        goSection(0);
         //window.addEventListener("hashchange", onHashChanged);
-
         return () => {
             //window.removeEventListener('scroll', handleScroll)
             window.removeEventListener('resize', handleResize)
@@ -80,6 +107,7 @@ export default function AppformIndex() {
     }, [])
 
     const goSection = function (sectionid) {
+        console.log(sectionid);
         if (sectionid === 0 || sectionid !== formSection) {
             formSection = sectionid;
             //window.scrollTo(window.scrollX, intViewportHeight * sectionid)
@@ -102,6 +130,10 @@ export default function AppformIndex() {
         }
         scroll({top: intViewportHeight * sectionid});
     }
+    const goNextSection = function () {
+        goSection(formSection + 1);
+    };
+
 
     return (
         <ThemeProvider theme={theme}>
@@ -114,46 +146,35 @@ export default function AppformIndex() {
                 <Container>
                     <nav className="sideNav" id="sideNav">
                         <ul>
-                            <li className="side-link"><a onClick={(e) => {
-                                e.preventDefault();
-                                goSection(1);
-                            }}>1</a></li>
-                            <li className="side-link"><a onClick={(e) => {
-                                e.preventDefault();
-                                goSection(2);
-                            }}>2</a></li>
-                            <li className="side-link"><a onClick={(e) => {
-                                e.preventDefault();
-                                goSection(3);
-                            }}>3</a></li>
-                            <li className="side-link"><a onClick={(e) => {
-                                e.preventDefault();
-                                goSection(4);
-                            }}>4</a></li>
+                            <li/>
                         </ul>
+                        {/*<li className="side-link"><a onClick={(e) => {goSectionLink(e, 1)}}>1</a></li>*/}
                     </nav>
                     <form>
-                        <div className="formSection" id="formSection0">
+                        <div className="formSection open">
                             <div className="infoLogo">
                                 <LogoNew width={'100%'} height={'auto'} id={"logoHuge"}/>
                             </div>
                             <div className="infoText">
                                 <h1>LaunchArt Request</h1>
                                 <p>
-                                    For any collection launch on the Kalao Go launchpad, we need to collect information
-                                    about your project.
+                                    We are requesting some vital pieces of information about your project before our
+                                    first meeting.
                                 </p>
                                 <p>
-                                    For questions about the certification process, please contact on Telegram
-                                    @Antoine_Kalao
-                                    or on Discord Antoine_Kalao#1038.
+                                    For questions, please contact on Discord LeeroyJenkins#8467.
+                                </p>
+                                <p>
+                                    We are requesting some vital information about your project before our first
+                                    meeting.
+                                    For questions, please contact on Discord LeeroyJenkins#8467.
                                 </p>
                                 <Button variant="primary" type="button" tabIndex={-1} onClick={(e) => {
-                                    goSection(1);
+                                    goNextSection();
                                 }}>Start</Button>
                             </div>
                         </div>
-                        <div className="formSection" id="formSection1">
+                        <div className="formSection open">
                             <div className="formGroup">
                                 <label htmlFor="name">Collection name</label>
                                 <input
@@ -162,31 +183,12 @@ export default function AppformIndex() {
                                 />
                                 <footer>
                                     <Button variant="primary" type="button" tabIndex={-1} onClick={(e) => {
-                                        goSection(2);
+                                        goNextSection();
                                     }}>OK</Button>
                                 </footer>
                             </div>
                         </div>
-                        <div className="formSection" id="formSection2">
-                            <div className="formGroup">
-                                <label htmlFor="name">Collection Symbol in uppercase</label>
-                                <p className="exm">
-                                    Example: <br/>
-                                    Collection Name : Dwarf Knights <br/>
-                                    Collection Symbol : DWRFKNGTS
-                                </p>
-                                <input
-                                    type="text" name="symbol" className="inp" tabIndex={-1}
-                                    placeholder="Type the symbol..."
-                                />
-                                <footer>
-                                    <Button variant="primary" type="button" tabIndex={-1} onClick={(e) => {
-                                        goSection(3);
-                                    }}>OK</Button>
-                                </footer>
-                            </div>
-                        </div>
-                        <div className="formSection" id="formSection3">
+                        <div className="formSection open">
                             <div className="formGroup">
                                 <label htmlFor="desc">Collection description</label>
                                 <p className="exm">
@@ -198,13 +200,13 @@ export default function AppformIndex() {
                                 />
                                 <footer>
                                     <Button variant="primary" type="button" tabIndex={-1} onClick={(e) => {
-                                        goSection(4);
+                                        goNextSection();
                                     }}>OK</Button>
                                 </footer>
 
                             </div>
                         </div>
-                        <div className="formSection" id="formSection4">
+                        <div className="formSection open">
                             <div className="formGroup">
                                 <label htmlFor="name">How many NFTs do you have in your collection?</label>
                                 <input
@@ -213,9 +215,59 @@ export default function AppformIndex() {
                                 />
                                 <footer>
                                     <Button variant="primary" type="button" tabIndex={-1} onClick={(e) => {
-                                        goSection(4);
+                                        goNextSection();
                                     }}>OK</Button>
                                 </footer>
+                            </div>
+                        </div>
+                        <div className="formSection open">
+                            <div className="formGroup">
+                                <label htmlFor="name">When do you plan to have your NFT minting event?</label>
+                                tarih
+                                <input
+                                    type="text" name="symbol" className="inp" tabIndex={-1}
+                                    placeholder="Type the total supply..."
+                                />
+                                <footer>
+                                    <Button variant="primary" type="button" tabIndex={-1} onClick={(e) => {
+                                        goNextSection();
+                                    }}>OK</Button>
+                                </footer>
+                            </div>
+                        </div>
+                        <div className="formSection open">
+                            <div className="formGroup">
+                                <label htmlFor="name">Do you need a whitelist mechanism?</label>
+                                Yes No
+                                <input
+                                    type="text" name="symbol" className="inp" tabIndex={-1}
+                                    placeholder="Type the total supply..."
+                                />
+                                <footer>
+                                    <Button variant="primary" type="button" tabIndex={-1} onClick={(e) => {
+                                        goNextSection();
+                                    }}>OK</Button>
+                                </footer>
+                            </div>
+                        </div>
+                        <div className="formSection">
+                            <div className="formGroup">
+                                <label htmlFor="desc">If yes, how many people do you aim to have in your whitelist, and
+                                    how many different whitelists do you want to have?</label>
+                                <p className="exm">
+                                    Example: <br/>
+                                    2 Whitelists with 2000 people for each.
+                                </p>
+                                <textarea
+                                    name="description" className="inp" tabIndex={-1}
+                                    placeholder="Type the collection description..."
+                                />
+                                <footer>
+                                    <Button variant="primary" type="button" tabIndex={-1} onClick={(e) => {
+                                        goNextSection();
+                                    }}>OK</Button>
+                                </footer>
+
                             </div>
                         </div>
                     </form>
@@ -235,13 +287,17 @@ const styles = {
         '.formSection': {
             width: ['90%', '70%', '70%', '70%', '60%', '50%'],
             paddingLeft: ['10%', '0', '0', '0', '0', '0'],
+            paddingTop: '60px',
             margin: 'auto',
             height: '100vh',
-            display: 'flex',
+            display: 'none',
             alignContent: 'center',
             justifyContent: 'flex-start',
             alignItems: 'center',
             flexDirection: 'row',
+            '&.open': {
+                display: 'flex'
+            },
             '.formGroup': {
                 flex: 1,
                 'footer': {
@@ -250,8 +306,12 @@ const styles = {
             },
             'label': {
                 display: 'block',
-                padding: '0 0 8px 0',
-                fontSize: '1.3rem'
+                padding: '0 0 .6rem 0',
+                fontSize: '1.3rem',
+                lineHeight: '1.6rem',
+            },
+            'p.exm': {
+                margin: '.7rem 0'
             },
             "input[type='text'],textarea": {
                 display: 'block',
@@ -297,7 +357,7 @@ const styles = {
         '.sideNav': {
             position: 'fixed',
             left: 0,
-            top: 0,
+            top: '60px',
             bottom: 0,
             zIndex: 5,
             display: 'none',
@@ -306,6 +366,13 @@ const styles = {
             '&.sideNavShow': {
                 display: 'flex'
             },
+            'ul': {
+                display: 'flex',
+                height: '90%',
+                maxHeight: '500px',
+                flexDirection: 'column',
+                justifyContent: 'space-evenly',
+            },
             'ul,li': {
                 listStyleType: 'none',
                 margin: '0',
@@ -313,7 +380,7 @@ const styles = {
             },
             'li': {
                 display: 'block',
-                margin: '0 0 16px 16px',
+                margin: '0 0 0 16px',
                 '&:last-child': {
                     marginBottom: 0
                 },
