@@ -802,6 +802,7 @@ const styles = {
             },
             '.msg': {
                 color: 'muted',
+                fontSize: ['.8rem','.9rem','1rem','1.2rem','1.3rem','1.3rem',],
                 '&.wrn': {
                     color: 'warning',
                 }
@@ -824,7 +825,7 @@ const styles = {
                 backgroundColor: 'transparent',
                 outline: '0',
                 color: 'heading',
-                fontSize: ['.8rem','.9rem','1rem','1.2rem','1.3rem','1.4rem',],
+                fontSize: ['1rem','1rem','1rem','1.2rem','1.3rem','1.4rem',],
                 resize: 'none',
                 '&:focus, &:active': {
                     outline: '0',
