@@ -13,7 +13,7 @@ export default function IndexPage() {
         <ThemeProvider theme={theme}>
             <Layout>
                 <SEO
-                    title="Launchart has 4 founders experienced in Web3 and NFT Trading"
+                    title="LaunchArt | Your Launchpad In Avalanche"
                     description="All Projects in Launchart have to Doxx and KYC themselves. We will not launch unknown projects."
                 />
                 <Banner/>
