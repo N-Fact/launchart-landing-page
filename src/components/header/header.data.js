@@ -14,6 +14,7 @@ export default [
   {
     path: '/appform',
     label: 'Application Form',
+    target: '_blank',
   },
   {
     path: '/#team',

@@ -45,9 +45,9 @@ const DrawerNav = () => {
             <Box sx={styles.wrapper}>
                 <Logo sx={styles.logo}/>
                 <Box as="ul" sx={styles.navbar}>
-                    {menuItems.map(({path, label}, i) => (
+                    {menuItems.map(({path, label,target}, i) => (
                         <Box as="li" key={i}>
-                            <NavLink path={path} label={label} onClick={toggleHandler}/>
+                            <NavLink path={path} label={label} target={target} onClick={toggleHandler}/>
                         </Box>
                     ))}
                     <li style={{textAlign: "center"}}>

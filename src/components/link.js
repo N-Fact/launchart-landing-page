@@ -4,14 +4,17 @@ import NextLink from 'next/link';
 import {jsx, Link as A} from 'theme-ui';
 import {HiOutlineChevronRight} from 'react-icons/hi';
 
-export function NavLink({path, label, children, onClick=()=>{}, ...rest}) {
+export function NavLink({path, label, children, onClick = () => {}, ...rest}) {
     return (
         <NextLink
             href={path}
-            to={path}
-            {...rest}
+            /*to={path}*/
         >
-            <a sx={styles.maninLink} className={"nav-item"} onClick={onClick}>{label}</a>
+            <a sx={styles.maninLink}
+               href={path}
+               className={"nav-item"}
+               {...rest}
+               onClick={onClick}>{label}</a>
         </NextLink>
     );
 }

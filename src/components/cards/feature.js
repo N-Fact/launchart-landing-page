@@ -10,7 +10,7 @@ const Feature = ({data, ...props}) => {
                 <Image src={data?.icon} alt={data?.title}/>
                 <Heading as="h3">{data?.title}</Heading>
                 <Text as="p">{data?.description}</Text>
-                {data?.path && <LearnMore path={data?.path}/>}
+                {/*{data?.path && <LearnMore path={data?.path}/>}*/}
             </Box>
         </Box>
     );

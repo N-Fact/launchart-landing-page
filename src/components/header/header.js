@@ -20,9 +20,9 @@ export default function Header() {
                                 <Logo sx={styles.logo}/>
                                 <Flex as="nav" sx={styles.navbar} className="navbar">
                                     <Box as="ul" sx={styles.navList}>
-                                        {menuItems.map(({path, label}, i) => (
+                                        {menuItems.map(({path, label,target}, i) => (
                                             <li key={i}>
-                                                <NavLink path={path} label={label}/>
+                                                <NavLink path={path} label={label} target={target}/>
                                             </li>
                                         ))}
                                     </Box>

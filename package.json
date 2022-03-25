@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.4.0",
     "dotenv": "^8.2.0",
     "framer-motion": "^3.3.0-beta.22",
     "globby": "^11.0.2",
