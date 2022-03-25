@@ -156,7 +156,7 @@ export default function AppformIndex() {
                 if (ratio === 0) {
                     // console.log('offsetHeight: ' + mainForm.current.offsetHeight, 'ST:' + ST);
                     // console.log(Math.floor(ST / mainForm.current.offsetHeight  ));
-                    goSection(Math.floor(ST / mainForm.current.offsetHeight  ));
+                    goSection(Math.floor(ST / mainForm.current.offsetHeight));
                 }
                 // // if (ratio > .9) {
                 // //     thisSectionid = sectionID + 1;
@@ -295,6 +295,14 @@ export default function AppformIndex() {
             const sideLinks = document.querySelectorAll('.side-link'),
                 sideLinkCount = sideLinks.length;
 
+            const openSections = document.querySelectorAll('.formSection.open');
+            Array.from(openSections).forEach(function (el) {
+                if (parseInt(el.getAttribute('data-index')) !== sideLinkCount) {
+                    el.classList.add('willOpen');
+                    el.classList.remove('open');
+                }
+            });
+
             /** To The Moon */
             const toTheMoon = () => {
                 const sideNav = document.getElementById('sideNav');
@@ -319,7 +327,7 @@ export default function AppformIndex() {
                                 }
                             }
                         }
-                    }, 700);
+                    }, 500);
             }
             toTheMoon();
 
@@ -329,19 +337,19 @@ export default function AppformIndex() {
                     isFormSent = true;
                     formError = false;
                     document.getElementById("form").reset();
-                    const openSections = document.querySelectorAll('.formSection.open');
-                    Array.from(openSections).forEach(function (el) {
-                        if (parseInt(el.getAttribute('data-index')) !== sideLinkCount) {
-                            el.classList.remove('open');
-                        }
-                    });
                 }, (error) => {
                     //console.error(error.text);
                     isFormSent = true;
                     formError = true;
                     launchAni = false;
                     button.disabled = false;
+                    const openSections = document.querySelectorAll('.formSection.willOpen');
+                    Array.from(openSections).forEach(function (el) {
+                        el.classList.remove('willOpen');
+                        el.classList.add('open');
+                    });
                 });
+
         } else {
             let timer = setTimeout(function () {
                 button.disabled = false;
@@ -793,11 +801,30 @@ const styles = {
             zIndex: 1,
             overflowY: 'auto',
             scrollBehavior: 'smooth',
+            '&::-webkit-scrollbar-track':
+                {
+                    ///boxShadow: 'inset 0 0 6px rgba(0,0,0,0.3)',
+                    //borderRadius: '10px',
+                    backgroundColor: 'transparent',
+                },
+
+            '&::-webkit-scrollbar':
+                {
+                    width: '12px',
+                    backgroundColor: 'transparent',
+                },
+
+            '&::-webkit-scrollbar-thumb':
+                {
+                    borderRadius: '10px',
+                    //boxShadow: 'inset 0 0 6px rgba(0,0,0,.3)',
+                    backgroundColor: 'primary',
+                },
         },
         '.formSection': {
             width: ['90%', '70%', '70%', '70%', '60%', '50%'],
             paddingLeft: ['10%', '0', '0', '0', '0', '0'],
-            paddingTop: '60px',
+            //paddingTop: '60px',
             margin: 'auto',
             height: '100vh',
             display: 'none',
@@ -968,6 +995,7 @@ const styles = {
                 },
             },
             '&.toTheMoon': {
+                display: 'flex',
                 'li': {
                     "&[data-index='1']": {
                         'a': {
