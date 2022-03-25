@@ -791,7 +791,7 @@ const styles = {
             '.formGroup': {
                 flex: 1,
                 'footer': {
-                    paddingTop: 4,
+                    paddingTop: [1,2,2,3,3,4,],
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
@@ -808,9 +808,10 @@ const styles = {
             },
             'label': {
                 display: 'block',
-                padding: '0 0 .6rem 0',
-                fontSize: '1.3rem',
-                lineHeight: '1.6rem',
+                padding: '0',
+                paddingBottom: ['.1rem','.2rem','.3rem','.4rem','.5rem','.6rem',],
+                fontSize: ['.8rem','.9rem','1rem','1.2rem','1.3rem','1.3rem',],
+                lineHeight: ['1.1rem','1.2rem','1.3rem','1.4rem','1.5rem','1.6rem',],
             },
             'p.exm': {
                 margin: '.7rem 0'
@@ -823,7 +824,7 @@ const styles = {
                 backgroundColor: 'transparent',
                 outline: '0',
                 color: 'heading',
-                fontSize: '1.4rem',
+                fontSize: ['.8rem','.9rem','1rem','1.2rem','1.3rem','1.4rem',],
                 resize: 'none',
                 '&:focus, &:active': {
                     outline: '0',
@@ -831,7 +832,7 @@ const styles = {
                 }
             },
             'textarea': {
-                height: '100px'
+                height: ['50px','60px','70px','80px','90px','100px',],
             },
             '.dateGroup': {
                 "input[type='text']": {
