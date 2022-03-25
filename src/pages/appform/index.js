@@ -21,30 +21,6 @@ export default function AppformIndex() {
     //const router = useRouter();
     useEffect(() => {
         intViewportHeight = window.innerHeight;
-        let timer = null;
-        const handleScroll = () => {
-            if (timer !== null) {
-                clearTimeout(timer);
-            }
-            timer = setTimeout(function () {
-                let thisSectionid;
-                const sectionID = Math.floor(window.scrollY / intViewportHeight);
-                const ratio = (window.scrollY % intViewportHeight) / intViewportHeight;
-                if (ratio > .7) {
-                    thisSectionid = sectionID + 1;
-                } else {
-                    thisSectionid = sectionID;
-                }
-                if (formSection !== thisSectionid) {
-                    formSection = thisSectionid;
-                    goSection(formSection);
-                }
-            }, 150);
-        }
-        const handleResize = () => {
-            intViewportHeight = window.innerHeight;
-            goSection(formSection);
-        }
         const prepareSideLink = () => {
             Array.from(document.querySelectorAll('.formSection')).forEach(function (el) {
                 el.removeAttribute('id');
@@ -82,8 +58,8 @@ export default function AppformIndex() {
         }
         const initialize = () => {
             prepareSideLink();
-            window.scrollTo(window.scrollX, window.scrollY - 1);
-            window.scrollTo(window.scrollX, window.scrollY + 1);
+            //mainForm.current.scrollTop(window.scrollX, window.scrollY - 1);
+            //mainForm.current.scrollTo(window.scrollX, window.scrollY + 1);
             goSection(0); //xxx
         }
         initialize();
@@ -97,12 +73,6 @@ export default function AppformIndex() {
                            goSection(sectionid);
                        }
         };*/
-        //window.addEventListener('scroll', handleScroll)
-        window.addEventListener('resize', handleResize)
-        //will be called on component mount
-        document.body.style.overflow = "hidden";
-        document.getElementById('logoMain').style.opacity = '0';
-        //window.addEventListener("hashchange", onHashChanged);
 
         /** Focus Check */
         const els = document.querySelectorAll("input,textarea,button"),
@@ -165,9 +135,51 @@ export default function AppformIndex() {
         }
 
 
+        /** Resize */
+        const handleResize = () => {
+            intViewportHeight = window.innerHeight;
+            goSection(formSection);
+        }
+        window.addEventListener('resize', handleResize)
+        /** Scroll */
+        let timer = null;
+        const handleScroll = () => {
+            if (timer !== null) {
+                clearTimeout(timer);
+            }
+            timer = setTimeout(function () {
+                let ST = mainForm.current.scrollTop;
+                let thisSectionid;
+                const sectionID = Math.floor(ST / intViewportHeight);
+                const ratio = (ST % intViewportHeight) / intViewportHeight;
+
+                if (ratio === 0) {
+                    // console.log('offsetHeight: ' + mainForm.current.offsetHeight, 'ST:' + ST);
+                    // console.log(Math.floor(ST / mainForm.current.offsetHeight  ));
+                    goSection(Math.floor(ST / mainForm.current.offsetHeight  ));
+                }
+                // // if (ratio > .9) {
+                // //     thisSectionid = sectionID + 1;
+                // // } else {
+                // //     thisSectionid = sectionID;
+                // // }
+                // // if (formSection !== thisSectionid) {
+                // //     formSection = thisSectionid;
+                // //     goSection(formSection);
+                // }
+            }, 250);
+        }
+        mainForm.current.addEventListener('scroll', handleScroll)
+
+        //will be called on component mount
+        //document.body.style.overflow = "hidden";
+        document.getElementById('logoMain').style.opacity = '0';
+        //window.addEventListener("hashchange", onHashChanged);
+
+
         /** Unregister */
         return () => {
-            //window.removeEventListener('scroll', handleScroll)
+            mainForm.current.removeEventListener('scroll', handleScroll)
             window.removeEventListener('resize', handleResize)
             document.body.style.overflow = "auto";
             document.getElementById('logoMain').style.opacity = '1';
@@ -210,7 +222,8 @@ export default function AppformIndex() {
                 }
             }
         }
-        scroll({top: intViewportHeight * sectionid});
+        mainForm.current.scrollTop = intViewportHeight * sectionid;
+        //scroll({top: intViewportHeight * sectionid});
     }
     const goNextSection = function () {
         const openSections = document.querySelectorAll('.formSection.open');
@@ -772,6 +785,14 @@ const styles = {
         // bottom: 0,
         '#form': {
             scrollSnapType: 'y mandatory',
+            position: 'fixed',
+            left: 0,
+            top: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 1,
+            overflowY: 'auto',
+            scrollBehavior: 'smooth',
         },
         '.formSection': {
             width: ['90%', '70%', '70%', '70%', '60%', '50%'],
@@ -791,7 +812,7 @@ const styles = {
             '.formGroup': {
                 flex: 1,
                 'footer': {
-                    paddingTop: [1,2,2,3,3,4,],
+                    paddingTop: [1, 2, 2, 3, 3, 4,],
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
@@ -802,7 +823,7 @@ const styles = {
             },
             '.msg': {
                 color: 'muted',
-                fontSize: ['.8rem','.9rem','1rem','1.2rem','1.3rem','1.3rem',],
+                fontSize: ['.8rem', '.9rem', '1rem', '1.2rem', '1.3rem', '1.3rem',],
                 '&.wrn': {
                     color: 'warning',
                 }
@@ -810,9 +831,9 @@ const styles = {
             'label': {
                 display: 'block',
                 padding: '0',
-                paddingBottom: ['.1rem','.2rem','.3rem','.4rem','.5rem','.6rem',],
-                fontSize: ['.8rem','.9rem','1rem','1.2rem','1.3rem','1.3rem',],
-                lineHeight: ['1.1rem','1.2rem','1.3rem','1.4rem','1.5rem','1.6rem',],
+                paddingBottom: ['.1rem', '.2rem', '.3rem', '.4rem', '.5rem', '.6rem',],
+                fontSize: ['.8rem', '.9rem', '1rem', '1.2rem', '1.3rem', '1.3rem',],
+                lineHeight: ['1.1rem', '1.2rem', '1.3rem', '1.4rem', '1.5rem', '1.6rem',],
             },
             'p.exm': {
                 margin: '.7rem 0'
@@ -825,7 +846,7 @@ const styles = {
                 backgroundColor: 'transparent',
                 outline: '0',
                 color: 'heading',
-                fontSize: ['1rem','1rem','1rem','1.2rem','1.3rem','1.4rem',],
+                fontSize: ['1rem', '1rem', '1rem', '1.2rem', '1.3rem', '1.4rem',],
                 resize: 'none',
                 '&:focus, &:active': {
                     outline: '0',
@@ -833,7 +854,7 @@ const styles = {
                 }
             },
             'textarea': {
-                height: ['50px','60px','70px','80px','90px','100px',],
+                height: ['50px', '60px', '70px', '80px', '90px', '100px',],
             },
             '.dateGroup': {
                 "input[type='text']": {
@@ -869,7 +890,7 @@ const styles = {
                 flex: [0, 0, 0, 1, 1, 1],
                 h1: {
                     marginTop: 0,
-                    fontSize: ['1.3rem', '1.4rem', '1.5rem', '1.7rem', '1.8rem', '2rem']
+                    fontSize: ['1.3rem', '1.4rem', '1.5rem', '1.7rem', '1.8rem', '2rem'],
                 }
             },
         },

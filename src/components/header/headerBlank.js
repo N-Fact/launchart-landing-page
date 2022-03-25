@@ -33,26 +33,8 @@ const styles = {
             left: 0,
             right: 0,
             py: 20,
-            transition: 'all 0.3s ease-in-out 0s',
-            '&.is-mobile-menu': {
-                backgroundColor: 'white',
-            },
-        },
-        '.is-sticky': {
-            header: {
-                backgroundColor: 'background',
-                boxShadow: '0 6px 13px rgb(0 0 0 / 30%)',
-                py: 13,
-                '.nav-item': {
-                    //color: 'dark',
-                },
-                '.active': {
-                    //color: 'primary'
-                },
-                '.textDecoration': {
-                    //textDecoration: 'line-through'
-                }
-            },
+            backgroundColor: 'background',
+            boxShadow: '0 6px 13px rgb(0 0 0 / 10%)',
         },
     },
     headerInner: {
@@ -68,7 +50,9 @@ const styles = {
         fontSize: ['1.1rem', '1.4rem', '1.5rem', '1.6rem', '1.7rem', '1.8rem',],
         left: '50%',
         transform: 'translateX(-50%)',
-        top: ['50px', '60px', '60px', '0', '0', '0'],
+        //top: ['50px', '60px', '60px', '0', '0', '0'],
+        top: '5px',
+        display: ['none', 'none', 'none', 'block', 'block', 'block']
         /* top: 60px; */
     }
 };
