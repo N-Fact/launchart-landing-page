@@ -63,12 +63,12 @@ const styles = {
     heading: {
         margin: 0,
         padding: 0,
-        lineHeight:'60px',
+        lineHeight: '60px',
         position: 'absolute',
-        fontSize: ['1.3rem', '1.4rem', '1.5rem', '1.6rem', '1.7rem', '1.8rem',],
+        fontSize: ['1.1rem', '1.4rem', '1.5rem', '1.6rem', '1.7rem', '1.8rem',],
         left: '50%',
         transform: 'translateX(-50%)',
-        top: ['60px','60px' , '60px', '0', '0', '0'],
+        top: ['50px', '60px', '60px', '0', '0', '0'],
         /* top: 60px; */
     }
 };

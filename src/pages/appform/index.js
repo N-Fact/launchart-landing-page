@@ -770,6 +770,9 @@ const styles = {
         // top: 0,
         // right: 0,
         // bottom: 0,
+        '#form': {
+            scrollSnapType: 'y mandatory',
+        },
         '.formSection': {
             width: ['90%', '70%', '70%', '70%', '60%', '50%'],
             paddingLeft: ['10%', '0', '0', '0', '0', '0'],
@@ -782,7 +785,8 @@ const styles = {
             alignItems: 'center',
             flexDirection: 'row',
             '&.open': {
-                display: 'flex'
+                display: 'flex',
+                scrollSnapAlign: 'start'
             },
             '.formGroup': {
                 flex: 1,
@@ -841,6 +845,9 @@ const styles = {
                     fontSize: '1.4rem',
                     margin: ["0 .25rem", "0 .2rem", "0 .4rem", "0 .6rem", "0 .8rem", "0 1rem",],
                 }
+            },
+            p: {
+                fontSize: ['.9rem', '1rem', '1.1rem', '1.1rem', '1.1rem', '1.1rem']
             }
         },
         "#formSection0": {
@@ -851,15 +858,16 @@ const styles = {
             flexDirection: ['column', 'column', 'column', 'row', 'row', 'row'],
             '.infoLogo': {
                 flex: [0, 0, 0, 1, 1, 1],
-                marginBottom: [5, 5, 5, 0, 0, 0],
+                marginBottom: [3, 4, 5, 0, 0, 0],
                 'img': {
-                    width: ['100%', '100%', '100%', '80%', '80%', '80%'],
+                    width: ['60%', '70%', '80%', '80%', '80%', '80%'],
                 }
             },
             '.infoText': {
                 flex: [0, 0, 0, 1, 1, 1],
                 h1: {
-                    marginTop: 0
+                    marginTop: 0,
+                    fontSize: ['1.3rem', '1.4rem', '1.5rem', '1.7rem', '1.8rem', '2rem']
                 }
             },
         },
