@@ -14,7 +14,8 @@ export const menuItems = [
             },
         ],
     },
-   {
+
+    /*{
         id: 2,
         title: '',
         items: [
@@ -23,7 +24,7 @@ export const menuItems = [
                 label: 'Upcoming',
             },
         ],
-    },
+    },*/
 
     {
         id: 3,
@@ -42,6 +43,7 @@ export const menuItems = [
             {
                 path: '/appform',
                 label: 'Application Form',
+                target: '_blank',
             },
         ],
     },

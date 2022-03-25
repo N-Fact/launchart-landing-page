@@ -29,7 +29,8 @@ const Banner = () => {
                         <Box sx={styles.subscribe}>
                             <Button variant="primary" onClick={(e) => {
                                 e.preventDefault();
-                                window.location.href = '/appform';
+                                window.open('/appform', '_blank');
+                                //window.location.href = '/appform';
                             }}>Application Form</Button>
                         </Box>
                     </Box>
