@@ -75,15 +75,30 @@ export default function AppformIndex() {
         };*/
 
         /** Focus Check */
-        const els = document.querySelectorAll("input,textarea,button"),
+        const els = document.querySelectorAll("input,textarea"), //,button
             focused = (el) => {
-                const index = parseInt(el.target.closest(".formSection").getAttribute('data-index'));
-                if (index !== formSection) {
-                    goSection(index);
-                }
+                mainForm.current.classList.add('focused');
+                el.target.closest(".formSection").classList.add('focused');
+                // const index = parseInt(el.target.closest(".formSection").getAttribute('data-index'));
+                // if (index !== formSection) {
+                //     goSection(index);
+                // }
             };
         for (let i = 0; i < els.length; ++i) {
             els[i].addEventListener("focus", focused, true);
+        }
+        /** Blur Check */
+        const elsBlured = document.querySelectorAll("input,textarea"), //,button
+            blured = (el) => {
+                mainForm.current.classList.remove('focused');
+                el.target.closest(".formSection").classList.remove('focused');
+                // const index = parseInt(el.target.closest(".formSection").getAttribute('data-index'));
+                // if (index !== formSection) {
+                //     goSection(index);
+                // }
+            };
+        for (let i = 0; i < elsBlured.length; ++i) {
+            elsBlured[i].addEventListener("blur", blured, true);
         }
 
         /** Row Validate */
@@ -152,7 +167,9 @@ export default function AppformIndex() {
                 let ST = mainForm.current.scrollTop;
                 const sectionID = Math.floor(ST / mainForm.current.offsetHeight);
                 //const ratio = (ST % intViewportHeight) / intViewportHeight;
-                goSection(sectionID);
+                if (window.innerWidth > 479) {
+                    goSection(sectionID);
+                }
                 //console.log(sectionID);
                 // if (ratio === 0) {
                 //     // console.log('offsetHeight: ' + mainForm.current.offsetHeight, 'ST:' + ST);
@@ -185,6 +202,9 @@ export default function AppformIndex() {
             document.getElementById('logoMain').style.opacity = '1';
             for (let i = 0; i < els.length; ++i) {
                 els[i].removeEventListener("focus", focused, true);
+            }
+            for (let i = 0; i < elsBlured.length; ++i) {
+                elsBlured[i].removeEventListener("blur", blured, true);
             }
             for (let i = 0; i < radiosWhitelist.length; ++i) {
                 radiosWhitelist[i].removeEventListener("change", radiosWhitelistCheck, true);
@@ -1159,6 +1179,16 @@ const styles = {
             },
             'input.no:checked ~ .switch label.no': {
                 color: '#bb0000'
+            },
+        },
+        '#form.focused': {
+            '@media only screen and (max-width: 479px)': {
+                '.open': {
+                    display: 'none',
+                    '&.focused': {
+                        display: 'flex',
+                    }
+                }
             },
         },
     },
