@@ -20,7 +20,7 @@ export default function AppformIndex() {
     let formSection = 0;
     //const router = useRouter();
     useEffect(() => {
-        intViewportHeight = window.innerHeight;
+        intViewportHeight = window.innerHeight - 90;
         const prepareSideLink = () => {
             Array.from(document.querySelectorAll('.formSection')).forEach(function (el) {
                 el.removeAttribute('id');
@@ -79,6 +79,7 @@ export default function AppformIndex() {
             focused = (el) => {
                 mainForm.current.classList.add('focused');
                 el.target.closest(".formSection").classList.add('focused');
+                document.getElementById("sideNav").classList.add("sideNavShow");
                 // const index = parseInt(el.target.closest(".formSection").getAttribute('data-index'));
                 // if (index !== formSection) {
                 //     goSection(index);
@@ -152,7 +153,7 @@ export default function AppformIndex() {
 
         /** Resize */
         const handleResize = () => {
-            intViewportHeight = window.innerHeight;
+            intViewportHeight = window.innerHeight - 90;
             goSection(formSection);
         }
         window.addEventListener('resize', handleResize)
@@ -165,11 +166,25 @@ export default function AppformIndex() {
             }
             timer = setTimeout(function () {
                 let ST = mainForm.current.scrollTop;
-                const sectionID = Math.floor(ST / mainForm.current.offsetHeight);
+                const sectionid = Math.floor(ST / mainForm.current.offsetHeight);
                 //const ratio = (ST % intViewportHeight) / intViewportHeight;
-                if (window.innerWidth > 479) {
-                    goSection(sectionID);
+                //console.log(sectionID);
+                //goSection(sectionID);
+
+                document.getElementById('logoMain').style.opacity = (sectionid !== 0 ? 1 : 0).toString();
+                const elSideNav = document.getElementById("sideNav");
+                if (sectionid === 0) {
+                    elSideNav.classList.remove("sideNavShow");
+                } else {
+                    elSideNav.classList.add("sideNavShow");
+                    Array.from(document.querySelectorAll('.side-link.active')).forEach(function (el) {
+                        el.classList.remove('active');
+                    });
+                    document.querySelector('li.side-link:nth-child(' + sectionid + ')').classList.add('active');
                 }
+
+
+                //if (window.innerWidth > 479) {}
                 //console.log(sectionID);
                 // if (ratio === 0) {
                 //     // console.log('offsetHeight: ' + mainForm.current.offsetHeight, 'ST:' + ST);
@@ -189,7 +204,7 @@ export default function AppformIndex() {
         mainForm.current.addEventListener('scroll', handleScroll)
 
         //will be called on component mount
-        //document.body.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
         document.getElementById('logoMain').style.opacity = '0';
         //window.addEventListener("hashchange", onHashChanged);
 
@@ -227,15 +242,7 @@ export default function AppformIndex() {
             //window.scrollTo(window.scrollX, intViewportHeight * sectionid)
             //document.location = '#formSection' + sectionid;
             document.getElementById('logoMain').style.opacity = (sectionid !== 0 ? 1 : 0).toString();
-            const elSideNav = document.getElementById("sideNav");
-            if (sectionid === 0) {
-                elSideNav.classList.remove("sideNavShow");
-            } else {
-                elSideNav.classList.add("sideNavShow");
-                Array.from(document.querySelectorAll('.side-link.active')).forEach(function (el) {
-                    el.classList.remove('active');
-                });
-                document.querySelector('li.side-link:nth-child(' + sectionid + ')').classList.add('active');
+            if (sectionid > 0) {
                 const inp = document.querySelector('#formSection' + sectionid + ' .inp');
                 if (inp) {
                     inp.focus();
@@ -471,6 +478,7 @@ export default function AppformIndex() {
             <SEO
                 title="Launchart Application Form"
                 description="Launchart Application Forms"
+                viewport="width=device-width,initial-scale=1"
             />
             <HeaderBlank heading="Application Form"/>
             <Box id="appform" sx={styles.appform}>
@@ -815,7 +823,7 @@ const styles = {
             scrollSnapType: 'y mandatory',
             position: 'fixed',
             left: 0,
-            top: 0,
+            top: '90px',
             right: 0,
             bottom: 0,
             zIndex: 1,
@@ -846,7 +854,8 @@ const styles = {
             paddingLeft: ['10%', '0', '0', '0', '0', '0'],
             //paddingTop: '60px',
             margin: 'auto',
-            height: '100vh',
+            //height: '100vh',
+            height: '100%',
             display: 'none',
             alignContent: 'center',
             justifyContent: 'flex-start',
@@ -856,8 +865,8 @@ const styles = {
                 display: 'flex',
                 scrollSnapAlign: 'start',
                 '@media only screen and (max-width: 479px)': {
-                    alignItems: 'flex-start',
-                    paddingTop: '90px',
+                    //alignItems: 'flex-start',
+                    //paddingTop: '90px',
                 },
             },
             '.formGroup': {
@@ -1182,12 +1191,21 @@ const styles = {
             },
         },
         '#form.focused': {
+            //overflow: 'hidden',
+            //scrollSnapType: 'none',
             '@media only screen and (max-width: 479px)': {
                 '.open': {
-                    display: 'none',
-                    '&.focused': {
-                        display: 'flex',
-                    }
+                    //display: 'none',
+                    //scrollSnapAlign: 'none',
+                    // '&.focused': {
+                    //     display: 'flex',
+                    //     height: 'auto',
+                    //     position: 'fixed',
+                    //     left: 0,
+                    //     top: 0,
+                    //     right: 0,
+                    //     bottom: 0,
+                    // }
                 }
             },
         },
