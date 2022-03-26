@@ -141,6 +141,7 @@ export default function AppformIndex() {
             goSection(formSection);
         }
         window.addEventListener('resize', handleResize)
+
         /** Scroll */
         let timer = null;
         const handleScroll = () => {
@@ -149,15 +150,14 @@ export default function AppformIndex() {
             }
             timer = setTimeout(function () {
                 let ST = mainForm.current.scrollTop;
-                let thisSectionid;
-                const sectionID = Math.floor(ST / intViewportHeight);
-                const ratio = (ST % intViewportHeight) / intViewportHeight;
-
-                if (ratio === 0) {
-                    // console.log('offsetHeight: ' + mainForm.current.offsetHeight, 'ST:' + ST);
-                    // console.log(Math.floor(ST / mainForm.current.offsetHeight  ));
-                    goSection(Math.floor(ST / mainForm.current.offsetHeight));
-                }
+                const sectionID = Math.floor(ST / mainForm.current.offsetHeight);
+                //const ratio = (ST % intViewportHeight) / intViewportHeight;
+                goSection(sectionID);
+                //console.log(sectionID);
+                // if (ratio === 0) {
+                //     // console.log('offsetHeight: ' + mainForm.current.offsetHeight, 'ST:' + ST);
+                //     // console.log(Math.floor(ST / mainForm.current.offsetHeight  ));
+                // }
                 // // if (ratio > .9) {
                 // //     thisSectionid = sectionID + 1;
                 // // } else {
@@ -167,7 +167,7 @@ export default function AppformIndex() {
                 // //     formSection = thisSectionid;
                 // //     goSection(formSection);
                 // }
-            }, 250);
+            }, 150);
         }
         mainForm.current.addEventListener('scroll', handleScroll)
 
@@ -834,7 +834,11 @@ const styles = {
             flexDirection: 'row',
             '&.open': {
                 display: 'flex',
-                scrollSnapAlign: 'start'
+                scrollSnapAlign: 'start',
+                '@media only screen and (max-width: 479px)': {
+                    alignItems: 'flex-start',
+                    paddingTop: '90px',
+                },
             },
             '.formGroup': {
                 flex: 1,
@@ -858,8 +862,8 @@ const styles = {
             'label': {
                 display: 'block',
                 padding: '0',
-                paddingBottom: ['.1rem', '.2rem', '.3rem', '.4rem', '.5rem', '.6rem',],
-                fontSize: ['.8rem', '.9rem', '1rem', '1.2rem', '1.3rem', '1.3rem',],
+                paddingBottom: ['.3rem', '.3rem', '.3rem', '.4rem', '.5rem', '.6rem',],
+                fontSize: ['1rem', '1rem', '1.1rem', '1.2rem', '1.3rem', '1.3rem',],
                 lineHeight: ['1.1rem', '1.2rem', '1.3rem', '1.4rem', '1.5rem', '1.6rem',],
             },
             'p.exm': {
@@ -910,7 +914,7 @@ const styles = {
                 flex: [0, 0, 0, 1, 1, 1],
                 marginBottom: [3, 4, 5, 0, 0, 0],
                 'img': {
-                    width: ['60%', '70%', '80%', '80%', '80%', '80%'],
+                    width: '80%',
                 }
             },
             '.infoText': {
@@ -920,6 +924,10 @@ const styles = {
                     fontSize: ['1.3rem', '1.4rem', '1.5rem', '1.7rem', '1.8rem', '2rem'],
                 }
             },
+            '@media only screen and (max-width: 479px)': {
+                width: '90%',
+                paddingLeft: '10%',
+            }
         },
         '.sideNav': {
             position: 'fixed',
@@ -931,7 +939,12 @@ const styles = {
             flexDirection: 'column',
             justifyContent: 'space-around',
             '&.sideNavShow': {
-                display: 'flex'
+                display: 'flex',
+                '@media only screen and (max-width: 479px)': {
+                    justifyContent: 'flex-start',
+                    top: '80px',
+                    left: '4px',
+                }
             },
             'ul': {
                 display: 'flex',
@@ -939,6 +952,9 @@ const styles = {
                 maxHeight: '500px',
                 flexDirection: 'column',
                 justifyContent: 'space-evenly',
+                '@media only screen and (max-width: 479px)': {
+                    maxHeight: '370px',
+                },
             },
             'ul,li': {
                 listStyleType: 'none',
@@ -1091,7 +1107,7 @@ const styles = {
             },
             label: {
                 cursor: 'pointer',
-                color: 'muted',
+                color: 'text',
                 width: '60px',
                 lineHeight: '50px',
                 transition: 'all 0.2s ease',
@@ -1099,7 +1115,6 @@ const styles = {
             'label.yes': {
                 position: 'absolute',
                 left: '0px',
-                height: '20px',
             },
             'label.no': {
                 position: 'absolute',
