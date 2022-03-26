@@ -1,22 +1,23 @@
 export default [
   {
-    path: 'home',
+    path: '/',
     label: 'Home',
   },
-  {
+  /*{
     path: '',
     label: 'Upcoming',
-  },
+  },*/
   {
-    path: 'services',
+    path: '/#services',
     label: 'Launchpad',
   },
   {
-    path: '',
+    path: '/appform',
     label: 'Application Form',
+    target: '_blank',
   },
   {
-    path: 'blog',
+    path: '/#team',
     label: 'About Us',
   },
  

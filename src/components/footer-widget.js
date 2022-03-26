@@ -9,10 +9,10 @@ const FooterWidget = ({ title, items }) => {
   return (
     <Box sx={styles.footerWidget}>
       <ul>
-        {items.map(({ path, label, icon }, i) => (
+        {items.map(({ path, label, icon, target }, i) => (
           <li key={i}>
             {icon && <Image src={icon} alt={label} />}
-            <LinkFooter path={path} key={i} label={label} variant="footer" />
+            <LinkFooter path={path} key={i} label={label} variant="footer" target={target} />
           </li>
         ))}
       </ul>
@@ -44,7 +44,7 @@ const styles = {
         },
       },
       a: {
-        color: rgba('#02073E', 0.8),
+        color: 'text',
       },
     },
   },

@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.4.0",
     "dotenv": "^8.2.0",
     "framer-motion": "^3.3.0-beta.22",
     "globby": "^11.0.2",
@@ -20,7 +21,7 @@
     "rc-drawer": "^4.2.2",
     "react": "16.11.0",
     "react-dom": "^17.0.1",
-    "react-ga": "^3.3.0",
+    "react-ga4": "^1.4.1",
     "react-icons": "^4.1.0",
     "react-scroll": "^1.8.1",
     "react-slick": "^0.28.0",
