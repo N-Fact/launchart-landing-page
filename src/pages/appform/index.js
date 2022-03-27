@@ -182,6 +182,7 @@ export default function AppformIndex() {
                     });
                     document.querySelector('li.side-link:nth-child(' + sectionid + ')').classList.add('active');
                 }
+                formSection = sectionid;
 
 
                 //if (window.innerWidth > 479) {}
