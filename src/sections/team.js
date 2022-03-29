@@ -14,35 +14,30 @@ import thumb4 from 'assets/images/blog/ae.png';
 const data = [
     {
         id: 1,
-        thumb: thumb1,
-        commentCount: 22,
-        link: '#!',
-        name: `DevDwarf`,
-        title: `Chief Operating Officer`,
-    },
-    {
-        id: 2,
         thumb: thumb2,
         commentCount: 15,
         link: '#!',
         name: `LeeroyJenkins`,
-        title: `Chief Community Officer`,
+        //title: `Chief Community Officer`,
+        title: ``,
     },
     {
-        id: 3,
+        id: 2,
         thumb: thumb3,
         commentCount: 18,
         link: '#!',
         name: `UykusuzTraderNFT`,
-        title: `Chief Marketing Officer`,
+        //title: `Chief Marketing Officer`,
+        title: ``,
     },
     {
-        id: 4,
+        id: 3,
         thumb: thumb4,
         commentCount: 13,
         link: '#!',
         name: `Aertas`,
-        title: `Chief Technology Officer`,
+        //title: `Chief Technology Officer`,
+        title: ``,
     },
 ];
 
@@ -96,10 +91,10 @@ const Team = () => {
                 <SectionHeading
                     sx={styles.heading}
                     title="About us"
-                    description="Our Motto ; Stop being a consumer, be a producer. Give back to the community by helping and leading them"/>
+                    description="Our Motto; Stop being a consumer, be a producer. Give back to the community by helping and leading them"/>
                 <SectionHeading
                     sx={styles.title}
-                    title="Launchart has 4 founders experienced in Web3 and NFT Trading"
+                    title="Launchart has 3 co-founders experienced in Web3 and NFT Trading"
                     description=""/>
                 <Slider sx={styles.grid} {...settings}>
                     {data?.map((post) => (
@@ -139,9 +134,9 @@ const styles = {
         gridTemplateColumns: [
             'repeat(1, 1fr)',
             'repeat(1, 1fr)',
-            'repeat(2, 1fr)',
-            'repeat(2, 1fr)',
-            'repeat(4, 1fr)',
+            'repeat(3, 1fr)',
+            'repeat(3, 1fr)',
+            'repeat(3, 1fr)',
         ],
         m: [0, 0, 0, '0 -15px', 0],
     },
