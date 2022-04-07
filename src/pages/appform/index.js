@@ -61,7 +61,7 @@ export default function AppformIndex() {
             prepareSideLink();
             //mainForm.current.scrollTop(window.scrollX, window.scrollY - 1);
             //mainForm.current.scrollTo(window.scrollX, window.scrollY + 1);
-            goSection(0); //xxx
+            goSection(0);
         }
         initialize();
         /* const onHashChanged = (url) => {
@@ -110,7 +110,7 @@ export default function AppformIndex() {
                 if (res) {
                     goNextSection();
                 } else {
-                    //console.log("Error"); //xxx
+                    //console.log("Error");
                 }
                 //console.log(el.getAttribute('data-check'));
                 // const index = parseInt(el.target.closest(".formSection").getAttribute('data-index'));
@@ -392,6 +392,7 @@ export default function AppformIndex() {
         let ret = true;
         const keys = [
             'collectionname', 'collectiondescription', 'totalsupply', 'mintdate', 'iswhitelist',
+            'inteam','hasartist','hasdeveloper','experience',/*'previouscollection',*/
             'whitelistdescription', 'isroyalties', 'royaltiesdescription', 'price', 'mintingdescription',
             /*'website', 'telegramaccount', 'discordlink',*/ 'twitteraccount', 'contactinformation'
         ];
@@ -399,7 +400,11 @@ export default function AppformIndex() {
         for (let index, el, key, i = 0; i < keys.length; ++i) {
             key = keys[i];
             if (!validate(key)) {
-                if (key === 'iswhitelist' || key === 'isroyalties') {
+                if (key === 'iswhitelist'
+                    || key === 'isroyalties'
+                    || key === 'hasartist'
+                    || key === 'hasdeveloper'
+                ) {
                     el = document.querySelector("input[name='" + key + "']");
                 } else {
                     el = document.getElementById(key === 'mintdate' ? 'mintyear' : key);
@@ -411,9 +416,15 @@ export default function AppformIndex() {
         }
         return ret;
     }
+
     function validate(key) {
         let el;
-        if (key === 'iswhitelist' || key === 'isroyalties') {
+        if (
+            key === 'iswhitelist'
+            || key === 'isroyalties'
+            || key === 'hasartist'
+            || key === 'hasdeveloper'
+        ) {
             el = document.querySelector("input[name='" + key + "']");
         } else {
             el = document.getElementById(key === 'mintdate' ? 'mintyear' : key);
@@ -431,6 +442,8 @@ export default function AppformIndex() {
                 break;
             case 'iswhitelist':
             case 'isroyalties':
+            case 'hasartist':
+            case 'hasdeveloper':
                 error = document.querySelector("input[name='" + key + "']:checked") === null;
                 break;
             case 'whitelistdescription':
@@ -497,12 +510,11 @@ export default function AppformIndex() {
                             <div className="infoText">
                                 <h1>LaunchArt Request</h1>
                                 <p>
-                                    We are requesting some vital pieces of information about your project before our
-                                    first meeting.
+                                    We are requesting some vital pieces of information
+                                    about your project before our first meeting.
                                 </p>
                                 <p>
-                                    For questions, please contact on Discord LeeroyJenkins#8467 or please feel free to
-                                    contact us at support@launchart.io
+                                    For questions, please feel free to contact us at support@launchart.io
                                 </p>
                                 <Button variant="primary" type="button" /*tabIndex={-1}*/ onClick={(e) => {
                                     goNextSection();
@@ -512,7 +524,7 @@ export default function AppformIndex() {
 
                         <div className="formSection open">
                             <div className="formGroup">
-                                <label htmlFor="name">Collection name</label>
+                                <label htmlFor="name">Collection name <i>*</i></label>
                                 <input
                                     type="text" name="collectionname" id="collectionname"
                                     className="inp" /*tabIndex={-1}*/
@@ -528,7 +540,7 @@ export default function AppformIndex() {
                         </div>
                         <div className="formSection open">
                             <div className="formGroup">
-                                <label htmlFor="desc">Collection description</label>
+                                <label htmlFor="desc">Collection description <i>*</i></label>
                                 <p className="exm">
                                     This description will be used to present the collection on the marketplace.
                                 </p>
@@ -544,9 +556,110 @@ export default function AppformIndex() {
                                 </footer>
                             </div>
                         </div>
+
+
+                        xxx
                         <div className="formSection open">
                             <div className="formGroup">
-                                <label htmlFor="name">How many NFTs do you have in your collection?</label>
+                                <label htmlFor="inteam">How many people in the team ? <i>*</i></label>
+                                <input type="text" name="inteam" id="inteam"
+                                       className="inp" role="presentation" autoComplete="off"
+                                       placeholder="Type the number of people in the team..."/>
+                                <footer>
+                                    <Button variant="primary" type="button" data-check="inteam">OK</Button>
+                                    <span className="msg"/>
+                                </footer>
+                            </div>
+                        </div>
+
+
+
+                        <div className="formSection open">
+                            <div className="formGroup">
+                                <label htmlFor="name">Does artist in your team? <i>*</i></label>
+                                <div className="toggle-radio">
+                                    <input type="radio" name="hasartist" id="hasartistyes" className="yes"
+                                           value="yes" /*defaultChecked*/
+                                    />
+                                    <input type="radio" name="hasartist" id="hasartistno" className="no"
+                                           value="no"/>
+                                    <div className="switch">
+                                        <label className="yes" htmlFor="hasartistyes">Yes</label>
+                                        <label className="no" htmlFor="hasartistno">No</label>
+                                        <span/>
+                                    </div>
+                                </div>
+                                <footer>
+                                    <Button variant="primary" type="button" data-check="hasartist">OK</Button>
+                                    <span className="msg"/>
+                                </footer>
+                            </div>
+                        </div>
+
+                        <div className="formSection open">
+                            <div className="formGroup">
+                                <label htmlFor="name">Do you have any developer in your team? <i>*</i></label>
+                                <div className="toggle-radio">
+                                    <input type="radio" name="hasdeveloper" id="hasdeveloperyes" className="yes"
+                                           value="yes" /*defaultChecked*/
+                                    />
+                                    <input type="radio" name="hasdeveloper" id="hasdeveloperno" className="no"
+                                           value="no"/>
+                                    <div className="switch">
+                                        <label className="yes" htmlFor="hasdeveloperyes">Yes</label>
+                                        <label className="no" htmlFor="hasdeveloperno">No</label>
+                                        <span/>
+                                    </div>
+                                </div>
+                                <footer>
+                                    <Button variant="primary" type="button" data-check="hasdeveloper">OK</Button>
+                                    <span className="msg"/>
+                                </footer>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div className="formSection open">
+                            <div className="formGroup">
+                                <label htmlFor="experience">Your experience level in NFTs.</label>
+                                <select id="experience" name="experience" className="slct">
+                                    <option value="">Please Select</option>
+                                    <option value="None">None</option>
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Expert">Expert</option>
+                                </select>
+                                <footer>
+                                    <Button variant="primary" type="button" data-check="experience">OK</Button>
+                                    <span className="msg"/>
+                                </footer>
+                            </div>
+                        </div>
+
+                        <div className="formSection open">
+                            <div className="formGroup">
+                                <label htmlFor="previouscollection">Twitter and Marketplace link if
+                                    you have launched any NFT collections before.</label>
+                                <input type="text" name="previouscollection" id="previouscollection"
+                                       className="inp" role="presentation" autoComplete="off"
+                                       placeholder="Type the Twitter and Marketplace link..."/>
+                                <footer>
+                                    <Button variant="primary" type="button" data-check="experience">OK</Button>
+                                    <span className="msg"/>
+                                </footer>
+                            </div>
+                        </div>
+
+                        xxx
+
+
+
+                        <div className="formSection open">
+                            <div className="formGroup">
+                                <label htmlFor="name">How many NFTs do you have in your collection? <i>*</i></label>
                                 <input
                                     type="text" name="totalsupply" id="totalsupply" className="inp" /*tabIndex={-1}*/
                                     role="presentation" autoComplete="off"
@@ -560,7 +673,7 @@ export default function AppformIndex() {
                         </div>
                         <div className="formSection open">
                             <div className="formGroup">
-                                <label htmlFor="name">When do you plan to have your NFT minting event?</label>
+                                <label htmlFor="name">When do you plan to have your NFT minting event? <i>*</i></label>
 
                                 <div className="dateGroup">
                                     <input
@@ -591,7 +704,7 @@ export default function AppformIndex() {
                         </div>
                         <div className="formSection open">
                             <div className="formGroup">
-                                <label htmlFor="name">Do you need a whitelist mechanism?</label>
+                                <label htmlFor="name">Do you need a whitelist mechanism? <i>*</i></label>
                                 <div className="toggle-radio">
                                     <input type="radio" name="iswhitelist" id="iswhitelistyes" className="yes"
                                            value="yes" /*defaultChecked*/
@@ -613,7 +726,7 @@ export default function AppformIndex() {
                         <div className="formSection" data-id="formSectionWhitelist">
                             <div className="formGroup">
                                 <label htmlFor="desc">How many people do you aim to have in your whitelist, and
-                                    how many different whitelists do you want to have?</label>
+                                    how many different whitelists do you want to have? <i>*</i></label>
                                 <p className="exm">
                                     Example: <br/>
                                     2 Whitelists with 2000 people for each.
@@ -633,7 +746,7 @@ export default function AppformIndex() {
                         </div>
                         <div className="formSection open">
                             <div className="formGroup">
-                                <label htmlFor="name">Do you want to have a royalties mechanism?</label>
+                                <label htmlFor="name">Do you want to have a royalties mechanism? <i>*</i></label>
                                 <div className="toggle-radio">
                                     <input type="radio" name="isroyalties" id="isroyaltiesyes" className="yes"
                                            value="yes" /*defaultChecked*/
@@ -654,7 +767,7 @@ export default function AppformIndex() {
                         </div>
                         <div className="formSection" data-id="formSectionRoyalties">
                             <div className="formGroup">
-                                <label htmlFor="desc">Please describe your royalties mechanism in detail.</label>
+                                <label htmlFor="desc">Please describe your royalties mechanism in detail. <i>*</i></label>
                                 <p className="exm">
                                     Example: <br/>
                                     1% for the team at this address (0x...) <br/>
@@ -675,7 +788,7 @@ export default function AppformIndex() {
                         </div>
                         <div className="formSection open">
                             <div className="formGroup">
-                                <label htmlFor="name">What's the aimed minting price for this collection?</label>
+                                <label htmlFor="name">What's the aimed minting price for this collection? <i>*</i></label>
                                 <input
                                     type="text" name="price" id="price" className="inp" /*tabIndex={-1}*/
                                     role="presentation" autoComplete="off"
@@ -689,7 +802,7 @@ export default function AppformIndex() {
                         </div>
                         <div className="formSection open">
                             <div className="formGroup">
-                                <label htmlFor="desc">Can you describe how do you imagine your minting event?</label>
+                                <label htmlFor="desc">Can you describe how do you imagine your minting event? <i>*</i></label>
                                 <p className="exm">
                                     Example: <br/>
                                     During the first hour, the whitelisted users will be able to mint with a limit of 3
@@ -710,7 +823,7 @@ export default function AppformIndex() {
                         </div>
                         <div className="formSection open">
                             <div className="formGroup">
-                                <label htmlFor="name">Your Website</label>
+                                <label htmlFor="name">Your Website </label>
                                 <p className="exm">
                                     Example: https://www.launchart.io
                                 </p>
@@ -727,7 +840,7 @@ export default function AppformIndex() {
                         </div>
                         <div className="formSection open">
                             <div className="formGroup">
-                                <label htmlFor="name">Twitter account</label>
+                                <label htmlFor="name">Twitter account <i>*</i></label>
                                 <p className="exm">
                                     Example: @launchartio
                                 </p>
@@ -782,7 +895,7 @@ export default function AppformIndex() {
                         </div>
                         <div className="formSection open">
                             <div className="formGroup">
-                                <label htmlFor="desc">Contact Information</label>
+                                <label htmlFor="desc">Contact Information <i>*</i></label>
                                 <p className="exm">
                                     How should we contact you?
                                 </p>
@@ -894,11 +1007,14 @@ const styles = {
                 paddingBottom: ['.3rem', '.3rem', '.3rem', '.4rem', '.5rem', '.6rem',],
                 fontSize: ['1rem', '1rem', '1.1rem', '1.2rem', '1.3rem', '1.3rem',],
                 lineHeight: ['1.1rem', '1.2rem', '1.3rem', '1.4rem', '1.5rem', '1.6rem',],
+                i: {
+                    color: 'primary',
+                }
             },
             'p.exm': {
                 margin: '.7rem 0'
             },
-            "input[type='text'],textarea": {
+            "input[type='text'],textarea,select": {
                 display: 'block',
                 width: '100%',
                 border: 'none',
@@ -915,6 +1031,9 @@ const styles = {
             },
             'textarea': {
                 height: ['50px', '60px', '70px', '80px', '90px', '100px',],
+            },
+            '.slct *': {
+                backgroundColor: 'background',
             },
             '.dateGroup': {
                 "input[type='text']": {
