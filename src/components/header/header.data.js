@@ -12,13 +12,18 @@ export default [
     label: 'Launchpad',
   },
   {
+    path: '/#team',
+    label: 'About Us',
+  },
+  {
     path: '/appform',
     label: 'Application Form',
     target: '_blank',
   },
   {
-    path: '/#team',
-    label: 'About Us',
+    path: '/hiring',
+    label: 'Hiring!',
+    target: '_blank',
   },
- 
+
 ];

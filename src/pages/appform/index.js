@@ -13,7 +13,8 @@ import LogoNew from "../../components/icons/LogoNew";
 import emailjs from '@emailjs/browser';
 
 let intViewportHeight,
-    launchAni = false;
+    launchAni = false,
+    formStart = false;
 
 export default function AppformIndex() {
     const mainForm = useRef();
@@ -408,10 +409,8 @@ export default function AppformIndex() {
                 return false;
             }
         }
-
         return ret;
     }
-
     function validate(key) {
         let el;
         if (key === 'iswhitelist' || key === 'isroyalties') {
