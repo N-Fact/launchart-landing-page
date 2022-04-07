@@ -558,7 +558,7 @@ export default function AppformIndex() {
                         </div>
 
 
-                        xxx
+
                         <div className="formSection open">
                             <div className="formGroup">
                                 <label htmlFor="inteam">How many people in the team ? <i>*</i></label>
@@ -653,7 +653,7 @@ export default function AppformIndex() {
                             </div>
                         </div>
 
-                        xxx
+
 
 
 
