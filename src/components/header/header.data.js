@@ -21,8 +21,8 @@ export default [
     target: '_blank',
   },
   {
-    path: '/hiring',
-    label: 'Hiring!',
+    path: '/career',
+    label: 'Career',
     target: '_blank',
   },
 

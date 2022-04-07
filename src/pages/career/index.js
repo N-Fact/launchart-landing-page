@@ -21,7 +21,7 @@ export default function IndexPage() {
 
             emailjs.sendForm('service_cmj7sx8', 'template_jobform', mainForm.current, 'GMzo0UGFw4p0siOUd')
                 .then((result) => {
-                    p.innerHTML = 'We’re gathering information, <br> and LaunchArt will contact you <br> if your application is positive. <br> <strong>Thanks!</strong>';
+                    p.innerHTML = 'We’re gathering information, <br> and LaunchArt will contact you <br> if your application is positive. <br><br> <strong>Thanks!</strong>';
                     document.getElementById("form").reset();
                     button.style.display = 'none';
                 }, (error) => {
@@ -241,7 +241,7 @@ const styles = {
         textAlign: 'center',
     },
     form: {
-        margin: '0 auto 1rem auto',
+        margin: '0 auto 5rem auto',
         pt: '20px',
         '.formGroup': {
             textAlign: 'left',

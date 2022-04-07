@@ -1,22 +1,29 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import {jsx, Box, Flex, Image, Heading, Text} from 'theme-ui';
+import {jsx, Box, Flex, Image, Heading, Text, Link as A} from 'theme-ui';
 import chat from 'assets/images/icons/chat.png';
 import {Link} from 'components/link';
 import {rgba} from 'polished';
+import NextLink from "next/link";
 
 const BlogPost = ({post}) => {
     return (
         <Box sx={styles.post}>
             <Flex as="figure" sx={styles.postImage}>
-                <Image src={post?.thumb} alt={post?.title}/>
+                <NextLink href={post.link}>
+                    <a target="_blank">
+                        <Image src={post?.thumb} alt={post?.title}/>
+                    </a>
+                </NextLink>
             </Flex>
             <Box sx={styles.meta}>
                 <Heading as="h3">
-                    <Link path={post.link}>
-                        <span>{post?.name}</span>
-                        {post?.title}
-                    </Link>
+                    <NextLink href={post.link}>
+                        <a target="_blank">
+                            <span>{post?.name}</span>
+                            {post?.title}
+                        </a>
+                    </NextLink>
                 </Heading>
             </Box>
         </Box>
@@ -43,6 +50,10 @@ const styles = {
                     display: 'block'
                 }
             },
+        },
+        a: {
+            textdecoration: 'none',
+            color: 'textSecondary',
         },
     },
     meta: {
