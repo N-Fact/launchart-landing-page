@@ -1,8 +1,8 @@
 export default [
-  {
+  /*{
     path: '/',
     label: 'Home',
-  },
+  },*/
   /*{
     path: '',
     label: 'Upcoming',
@@ -10,6 +10,10 @@ export default [
   {
     path: '/#services',
     label: 'Launchpad',
+  },
+  {
+    path: '/#features',
+    label: 'Features',
   },
   {
     path: '/#team',

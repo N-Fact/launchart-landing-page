@@ -4,9 +4,10 @@ import {jsx, Box, Container} from 'theme-ui';
 import SectionHeading from 'components/section-heading';
 import Feature from 'components/cards/feature';
 
-import icon1 from 'assets/images/icons/iconr1.png';
-import icon2 from 'assets/images/icons/iconr3.png';
-import icon3 from 'assets/images/icons/icon4.png';
+import icon1 from 'assets/images/icons/feature-kyc.png';
+import icon2 from 'assets/images/icons/feature-safe.png';
+import icon3 from 'assets/images/icons/feature-stable.png';
+import icon4 from 'assets/images/icons/feature-rugsafe.png';
 
 const data = [
     {
@@ -29,6 +30,13 @@ const data = [
         path: '#!',
         title: 'Fast and stable system infrastructure',
         description: `We are working with industry leads in system infrastructures. No more overload or problem with minting.`,
+    },
+    {
+        id: 4,
+        icon: icon4,
+        path: '#!',
+        title: 'RugSafe',
+        description: `LaunchArt provides RugSafe wallet for investors, keeping %30 of the projects' revenue on smart contract and paying back in 3 months as three installments to avoid Rug Possibility.`,
     },
 
 ];
@@ -70,9 +78,9 @@ const styles = {
         gridTemplateColumns: [
             'repeat(1, 1fr)',
             'repeat(1, 1fr)',
-            'repeat(1, 1fr)',
             'repeat(2, 1fr)',
-            'repeat(3, 1fr)',
+            'repeat(2, 1fr)',
+            'repeat(2, 1fr)',
         ],
         '.feature-item': {
             display: ['block'],
