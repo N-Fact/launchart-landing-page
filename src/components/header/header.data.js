@@ -24,14 +24,13 @@ export default [
     label: 'Partners',
   },
   {
+    path: '/career',
+    label: 'Career',
+    //target: '_blank',
+  },
+  {
     path: '/appform',
     label: 'Application Form',
     target: '_blank',
   },
-  {
-    path: '/career',
-    label: 'Career',
-    target: '_blank',
-  },
-
 ];
