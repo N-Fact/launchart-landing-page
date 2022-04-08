@@ -24,6 +24,10 @@ export default [
     label: 'Partners',
   },
   {
+    path: '/packages',
+    label: 'Packages',
+  },
+  {
     path: '/career',
     label: 'Career',
     //target: '_blank',

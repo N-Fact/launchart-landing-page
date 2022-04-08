@@ -36,6 +36,7 @@ export default {
                 textShadow: '#000', // default link color
                 warning: '#ffa114',
                 footerBg: '#0f1216',
+                link: '#4f96ff', // default link color
             },
         },
     },
@@ -323,6 +324,9 @@ export default {
             fontFamily: 'body',
             lineHeight: 'body',
             fontWeight: 'body',
+        },
+        a: {
+            color: 'link',
         },
         // h1-h6 Heading styles
         h1: {
