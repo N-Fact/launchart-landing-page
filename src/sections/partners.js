@@ -3,33 +3,39 @@
 import {jsx, Box, Container, Image} from 'theme-ui';
 import SectionHeading from 'components/section-heading';
 import NextLink from "next/link";
+import {useColorMode} from 'theme-ui'
 
 import kalao from 'assets/images/logos/kalao.svg';
+import kalaoLight from 'assets/images/logos/kalao-light.svg';
 import chainlink from 'assets/images/logos/chainlink.svg';
+import chainlinkLight from 'assets/images/logos/chainlink-light.svg';
 
-const data = [
-    {
-        id: 1,
-        thumb: kalao,
-        link: 'https://kalao.io',
-        name: `Kalao Go`,
-    },
-    {
-        id: 2,
-        thumb: chainlink,
-        link: 'https://chain.link',
-        name: `Chainlink`,
-    },
-];
 
+// We are honored to work with our partners.
 const Partners = () => {
+    const [colorMode] = useColorMode();
+
+    const data = [
+        {
+            id: 1,
+            thumb: colorMode === 'default' ? kalao : kalaoLight,
+            link: 'https://kalao.io',
+            name: `Kalao Go`,
+        },
+        {
+            id: 2,
+            thumb: colorMode === 'default' ? chainlink : chainlinkLight,
+            link: 'https://chain.link',
+            name: `Chainlink`,
+        },
+    ];
     return (
         <Box as="section" id="partners" sx={styles.section} variant="section.partners">
             <Container>
                 <SectionHeading
                     sx={styles.heading}
                     title="Partners"
-                    description="We are honored to work with our partners."/>
+                    description=""/>
                 <Box sx={styles.grid}>
                     {data.map((post) => (
                         /*<BlogPost key={post.id} post={post}/>*/
@@ -80,7 +86,7 @@ const styles = {
         ],
         m: [0, 0, 0, '0 -15px', 0],
         a: {
-            background: '#fff',
+            //background: '#fff',
             borderRadius: '20px',
             textAlign: 'center',
             p: '1rem 5rem'
