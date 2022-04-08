@@ -6,15 +6,14 @@ import {BsArrowLeft, BsArrowRight} from 'react-icons/bs';
 import SectionHeading from 'components/section-heading';
 import BlogPost from 'components/cards/blog-post';
 
-import thumb1 from 'assets/images/blog/devdawrf.png';
-import thumb2 from 'assets/images/blog/leeroy.png';
-import thumb3 from 'assets/images/blog/uykusuz.png';
-import thumb4 from 'assets/images/blog/ae.png';
+import leeroy from 'assets/images/blog/leeroy.png';
+import uykusuz from 'assets/images/blog/uykusuz.png';
+import aertas from 'assets/images/blog/aertas.png';
 
 const data = [
     {
         id: 1,
-        thumb: thumb2,
+        thumb: leeroy,
         commentCount: 15,
         link: 'https://twitter.com/imstuckstepbru',
         name: `LeeroyJenkins`,
@@ -23,7 +22,7 @@ const data = [
     },
     {
         id: 2,
-        thumb: thumb3,
+        thumb: uykusuz,
         commentCount: 18,
         link: 'https://twitter.com/uykusztraderNFT',
         name: `UykusuzTraderNFT`,
@@ -32,7 +31,7 @@ const data = [
     },
     {
         id: 3,
-        thumb: thumb4,
+        thumb: aertas,
         commentCount: 13,
         link: 'https://twitter.com/aertascom',
         name: `Aertas`,

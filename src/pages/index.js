@@ -7,6 +7,7 @@ import Banner from 'sections/banner';
 import Services from 'sections/services';
 import UltimateFeatures from 'sections/ultimate-features';
 import Team from 'sections/team';
+import Partners from "../sections/partners";
 
 export default function IndexPage() {
     return (
@@ -21,6 +22,7 @@ export default function IndexPage() {
                 {/* <WorkHard /> */}
                 <UltimateFeatures/>
                 <Team/>
+                <Partners/>
             </Layout>
         </ThemeProvider>
     );

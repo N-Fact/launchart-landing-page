@@ -126,6 +126,11 @@ export default {
             pb: [6, 6, 7, 8, null, 9],
             backgroundColor: 'backgroundSecondary',
         },
+        partners: {
+            pt: [6, null, null, 8, 7, 6, 7],
+            pb: [6, 6, 7, 8, null, 9],
+            backgroundColor: '',
+        },
         subscribe: {
             backgroundColor: ['#fff', '#fff', '#fff', '#f8f0ea', '#f8f0ea'],
             pt: [7],
