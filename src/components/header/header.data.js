@@ -20,6 +20,10 @@ export default [
     label: 'About Us',
   },
   {
+    path: '/#partners',
+    label: 'Partners',
+  },
+  {
     path: '/appform',
     label: 'Application Form',
     target: '_blank',

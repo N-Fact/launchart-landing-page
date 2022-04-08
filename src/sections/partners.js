@@ -24,7 +24,7 @@ const data = [
 
 const Partners = () => {
     return (
-        <Box as="section" id="team" sx={styles.section} variant="section.partners">
+        <Box as="section" id="partners" sx={styles.section} variant="section.partners">
             <Container>
                 <SectionHeading
                     sx={styles.heading}
