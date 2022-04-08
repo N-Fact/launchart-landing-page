@@ -21,6 +21,7 @@ export default {
         link: '#4f96ff', // default link color
         textShadow: '#1b2128', // default link color
         warning: '#ffa114',
+        footerBg: '#ddd',
 
         // highlight a background color for highlighting text
         modes: {
@@ -34,6 +35,7 @@ export default {
                 muted: '#596572',
                 textShadow: '#000', // default link color
                 warning: '#ffa114',
+                footerBg: '#0f1216',
             },
         },
     },
@@ -90,7 +92,7 @@ export default {
         },
         main: {},
         footer: {
-            // backgroundColor: '#F9FAFC',
+            backgroundColor: 'footerBg',
             pt: [6],
             pb: [5],
         },
@@ -123,6 +125,11 @@ export default {
             pt: [6, null, null, 8, 7, 6, 7],
             pb: [6, 6, 7, 8, null, 9],
             backgroundColor: 'backgroundSecondary',
+        },
+        partners: {
+            pt: [6, null, null, 8, 7, 6, 7],
+            pb: [6, 6, 7, 8, null, 9],
+            backgroundColor: '',
         },
         subscribe: {
             backgroundColor: ['#fff', '#fff', '#fff', '#f8f0ea', '#f8f0ea'],

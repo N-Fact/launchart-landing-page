@@ -28,3 +28,6 @@ yarn-error.log*
 
 .idea
 package-lock.json
+
+*.ini
+_work

@@ -654,9 +654,6 @@ export default function AppformIndex() {
                         </div>
 
 
-
-
-
                         <div className="formSection open">
                             <div className="formGroup">
                                 <label htmlFor="name">How many NFTs do you have in your collection? <i>*</i></label>
@@ -904,8 +901,7 @@ export default function AppformIndex() {
                                     placeholder="Type your contact information..."
                                 />
                                 <footer>
-                                    <Button variant="primary" type="button"
-                                            data-check="contactinformation">OK</Button>
+                                    <Button variant="primary" type="button" data-check="contactinformation">OK</Button>
                                     <span className="msg"/>
                                 </footer>
                             </div>
@@ -917,7 +913,6 @@ export default function AppformIndex() {
                                     Form</Button>
                             </div>
                         </div>
-
                     </form>
                 </Container>
             </Box>

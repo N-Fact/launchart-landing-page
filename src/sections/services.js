@@ -4,12 +4,12 @@ import {jsx, Box, Container} from 'theme-ui';
 import SectionHeading from 'components/section-heading';
 import Feature from 'components/cards/feature';
 
-import individual from 'assets/images/icons/iconr8.png';
-import marketing from 'assets/images/icons/iconr2.png';
-import allon from 'assets/images/icons/iconr4.png';
-import community from 'assets/images/icons/iconr6.png';
-import roadmap from 'assets/images/icons/icon6.png';
-import branding from 'assets/images/icons/iconr8.png';
+import individual from 'assets/images/icons/services-individual.png';
+import marketing from 'assets/images/icons/services-marketing.png';
+import allon from 'assets/images/icons/services-allon.png';
+import community from 'assets/images/icons/services-community.png';
+import roadmap from 'assets/images/icons/services-roadmap.png';
+import branding from 'assets/images/icons/services-individual.png';
 
 const data = [
     {

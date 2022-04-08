@@ -1,8 +1,8 @@
 export default [
-  {
+  /*{
     path: '/',
     label: 'Home',
-  },
+  },*/
   /*{
     path: '',
     label: 'Upcoming',
@@ -12,18 +12,25 @@ export default [
     label: 'Launchpad',
   },
   {
+    path: '/#features',
+    label: 'Features',
+  },
+  {
     path: '/#team',
     label: 'About Us',
+  },
+  {
+    path: '/#partners',
+    label: 'Partners',
+  },
+  {
+    path: '/career',
+    label: 'Career',
+    //target: '_blank',
   },
   {
     path: '/appform',
     label: 'Application Form',
     target: '_blank',
   },
-  {
-    path: '/career',
-    label: 'Career',
-    target: '_blank',
-  },
-
 ];
