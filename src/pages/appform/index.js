@@ -514,6 +514,9 @@ export default function AppformIndex() {
                                     about your project before our first meeting.
                                 </p>
                                 <p>
+                                    Please take a look at our <a href="/packages" target="_blank">Packages & Requirements</a> page before fill out our application form
+                                </p>
+                                <p>
                                     For questions, please feel free to contact us at support@launchart.io
                                 </p>
                                 <Button variant="primary" type="button" /*tabIndex={-1}*/ onClick={(e) => {
@@ -956,6 +959,9 @@ const styles = {
                     //boxShadow: 'inset 0 0 6px rgba(0,0,0,.3)',
                     backgroundColor: 'primary',
                 },
+        },
+        a: {
+            color: 'link',
         },
         '.formSection': {
             width: ['90%', '70%', '70%', '70%', '60%', '50%'],
