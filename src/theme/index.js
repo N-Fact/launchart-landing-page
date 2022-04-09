@@ -11,6 +11,7 @@ export default {
         headingSecondary: '#343d48', // heading color
         background: '#fff', // body background color
         backgroundSecondary: '#f7f7f7', // secondary background color
+        backgroundThird: '#f1f7ff',
         borderColor: '#f3f4f5', // border color
         primary: '#E74241', // primary button and link color
         primaryHover: '#af2c2b', // primary button and link color
@@ -30,6 +31,7 @@ export default {
                 textSecondary: '#d9d9d9',
                 background: '#343d48',
                 backgroundSecondary: '#222932',
+                backgroundThird: '#151a21',
                 heading: '#b7b7b7', // primary heading color
                 headingSecondary: '#9f9f9f', // heading color
                 muted: '#596572',
@@ -126,6 +128,11 @@ export default {
             pt: [6, null, null, 8, 7, 6, 7],
             pb: [6, 6, 7, 8, null, 9],
             backgroundColor: 'backgroundSecondary',
+        },
+        project: {
+            pt: [6, null, null, 8, 7, 6, 7],
+            pb: [6, 6, 7, 8, '5rem', '5rem'],
+            backgroundColor: 'backgroundThird',
         },
         partners: {
             pt: [6, null, null, 8, 7, 6, 7],

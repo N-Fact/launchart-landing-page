@@ -8,6 +8,7 @@ import Services from 'sections/services';
 import UltimateFeatures from 'sections/ultimate-features';
 import Team from 'sections/team';
 import Partners from "../sections/partners";
+import Upcoming from "../sections/upcoming";
 
 export default function IndexPage() {
     return (
@@ -18,6 +19,7 @@ export default function IndexPage() {
                     description="All Projects in Launchart have to Doxx and KYC themselves. We will not launch unknown projects."
                 />
                 <Banner/>
+                {/*<Upcoming/>*/}
                 <Services/>
                 {/* <WorkHard /> */}
                 <UltimateFeatures/>

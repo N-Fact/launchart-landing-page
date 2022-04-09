@@ -33,46 +33,44 @@ export default function ArticlePage() {
                             Package 1
                         </h2>
                         <p>
-                            Suitable for experienced project teams. In this package, LaunchArt expects team members to
-                            be mainly experienced in Web3 and NFTs; also, they've been into NFT projects before.
+                            Suitable for experienced project teams.
+                            In this package, LaunchArt expects team members to be fully experienced in Web3 and NFTs; also,
+                            they've been into NFT projects before.
                         </p>
                         <strong>Requirements;</strong>
                         <ol>
-                            <li>Roadmap must be ready</li>
-                            <li>The marketing plan must be ready</li>
-                            <li>Project team is experienced in community management</li>
+                            <li>The roadmap should be ready.</li>
+                            <li>The marketing plan should be ready with all of its aspects.</li>
+                            <li>The project team must be experienced in community management.</li>
                         </ol>
-
                         <h2>
                             Package 2
                         </h2>
                         <p>
-                            Suitable for experienced teams in Web3 and NFTs but seeking some help for community
-                            management.
+                            Suitable for experienced teams in Web3 and NFTs but seeking some help for community management.
                         </p>
                         <strong>
                             Requirements;
                         </strong>
                         <ol>
-                            <li>Roadmap is in process</li>
-                            <li>The marketing plan must be ready</li>
+                            <li>The roadmap is in process.</li>
+                            <li>The marketing plan should be ready with all of its aspects.</li>
                         </ol>
 
                         <h2>
                             Package 3
                         </h2>
                         <p>
-                            Suitable for experienced teams in Web3 and NFTs but seeking help for Community Management
-                            and Marketing
+                            Suitable for experienced teams in Web3 and NFTs but seeking help for Community Management and Marketing
                         </p>
 
                         <strong>
                             Requirements;
                         </strong>
                         <ol>
-                            <li>Roadmap is in process</li>
-                            <li>Ready to collaborate with our teams on Marketing Strategies</li>
-                            <li>Ready to collaborate with our teams for Community Management</li>
+                            <li>The roadmap is in development.</li>
+                            <li>Willing to collaborate with our teams on Marketing Strategies</li>
+                            <li>Willing to collaborate with our teams for Community Management</li>
                         </ol>
 
                         <h2>LaunchArt Requirements</h2>
@@ -81,25 +79,19 @@ export default function ArticlePage() {
                         </p>
 
                         <ol>
-                            <li>Artwork must be ready</li>
-                            <li>The designer must be in the team</li>
-                            <li>A developer, who will communicate with our team about Website, Smart Contract & Generate
-                                must be on the team
+                            <li>The artwork must be finished with all of its traits.</li>
+                            <li>Project management must include the designer in the team.</li>
+                            <li>A developer, who will communicate with our team about Website, Smart Contract & Generate should be included in the
+                                team.
                             </li>
-                            <li>A Team Member who will communicate with our team about Community Management must be on
-                                the team
-                            </li>
-                            <li>A Team Member who will communicate with our team about Marketing Strategies must be on
-                                the team.
-                            </li>
-                            <li>Post sale period is as crucial as the pre-sale period for LaunchArt. We're expecting
-                                that your post-sale plan must be as detailed as your pre-sale plan from all applicant
-                                projects. As LaunchArt we're keeping your %30 income from the mint in the smart contract
-                                and giving you three installments in 3 months. We're calling it RugSafe & by making
-                                that, we aim to protect the projects and investors by being a middleman.
+                            <li>A Team Member who will communicate with our team about Community Management should be included in the team.</li>
+                            <li>A Team Member who will communicate with our team about Marketing Strategies should be included in the team.</li>
+                            <li>Post sale period is as crucial as the pre-sale period for LaunchArt. We expect your post-sale plan to be as detailed
+                                as your pre-sale plan from all applicant projects. As LaunchArt, we're keeping your %30 income from the mint in the
+                                smart contract and giving you three installments in 3 months. We're calling it RugSafe & by making that, we aim to
+                                protect the projects and investors by being a middleman.
                             </li>
                         </ol>
-
 
                         <p style={{textAlign: 'center', margin: '3rem auto 5rem auto'}}>
                             <Button variant="primary" onClick={(e) => {
