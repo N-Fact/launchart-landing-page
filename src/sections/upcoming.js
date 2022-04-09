@@ -7,6 +7,10 @@ import SectionHeading from 'components/section-heading';
 import data from 'components/projects/projects.data';
 import NextLink from "next/link";
 
+const upcomingData = data.filter(function (entry) {
+    return entry.upcoming === true;
+});
+
 function SlickArrow({className, onClick, control}) {
     return (
         <Button
@@ -25,7 +29,7 @@ function SlickArrow({className, onClick, control}) {
 }
 
 const settings = {
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     speed: 500,
     nextArrow: <SlickArrow control="next"/>,
@@ -38,16 +42,16 @@ const settings = {
         {
             breakpoint: 10000,
             settings: {
-                infinite: true,
+                infinite: false,
                 slidesToShow: 2,
                 slidesToScroll: 1,
             },
         },
         {
-            breakpoint: 768,
+            breakpoint: 1024,
             settings: {
                 infinite: false,
-                slidesToShow: 2,
+                slidesToShow: 1,
                 slidesToScroll: 1,
             },
         },
@@ -59,15 +63,15 @@ const settings = {
 };
 
 const Upcoming = () => {
-    return (
+    return upcomingData.length ? (
         <Box as="section" id="upcoming" sx={styles.section} variant="section.project">
             <Container>
                 <SectionHeading
                     sx={styles.heading}
-                    title="Upcoming"
+                    title="Upcoming Launches"
                     description=""/>
                 <Slider sx={styles.grid} {...settings}>
-                    {data?.map((project) => (
+                    {upcomingData?.map((project) => (
                         <div key={project.id} sx={styles.projectCard}>
                             <NextLink href={`projects/${project.key}`}>
                                 <a target="_blank">
@@ -79,7 +83,7 @@ const Upcoming = () => {
                 </Slider>
             </Container>
         </Box>
-    );
+    ) : <></>;
 };
 
 export default Upcoming;
@@ -87,9 +91,21 @@ export default Upcoming;
 const styles = {
     projectCard: {
         p: '2rem',
-        img: {
-            borderRadius: "1rem"
-        }
+        a: {
+            display: 'block',
+            borderRadius: "1rem",
+            boxShadow: '0px 0px 5px #00000096',
+            transition: 'all 0.2s',
+            img: {
+                borderRadius: "1rem",
+                width: '100%',
+                height: 'auto',
+            },
+            '&:hover': {
+                boxShadow: '0px 0px 15px #00000096',
+                transform: 'scale(1.05)',
+            }
+        },
     },
     title: {
         maxWidth: [300, 300, 660, 500, null, 'none'],
@@ -117,16 +133,21 @@ const styles = {
             'repeat(1, 1fr)',
             'repeat(1, 1fr)',
             'repeat(1, 1fr)',
-            'repeat(2, 1fr)',
+            'repeat(1, 1fr)',
             'repeat(1, 1fr)',
         ],
         m: [0, 0, 0, '0 -15px', 0],
+        '.slick-track': {
+            mr: 'auto',
+            ml: 'auto',
+        }
     },
     paginationButton: {
         minHeight: '30px',
         padding: 0,
         position: 'absolute',
-        bottom: '-60px',
+        bottom: 'auto',
+        left: 'auto',
         ':focus': {
             outline: '0 none',
         },
@@ -134,18 +155,23 @@ const styles = {
             transition: 'all 0.2s ease-in-out 0s',
         },
         '&.slick-disabled': {
-            color: '#bbc7d7',
+            color: 'muted',
             svg: {
                 transform: 'scale(0.8)',
             },
         },
         '&.slick-prev': {
-            left: 'calc(50% - 16px)',
-            transform: 'translateX(-50%)',
+            //left: 'calc(50% - 16px)',
+            //transform: 'translateX(-50%)',
+            right: '6rem',
+            top: '-2rem',
         },
         '&.slick-next': {
-            transform: 'translateX(50%)',
-            right: 'calc(50% - 16px)',
+            //transform: 'translateX(50%)',
+            //right: 'calc(50% - 16px)',
+            right: '2rem',
+            top: '-2rem',
         },
     },
+
 };
