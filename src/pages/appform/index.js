@@ -514,7 +514,7 @@ export default function AppformIndex() {
                                     about your project before our first meeting.
                                 </p>
                                 <p>
-                                    Please take a look at our <a href="/packages" target="_blank">Packages & Requirements</a> page before fill out our application form
+                                    Please take a look at our <a href="/packages" target="_blank">Packages & Requirements</a> page before fill out our application form.
                                 </p>
                                 <p>
                                     For questions, please feel free to contact us at support@launchart.io
