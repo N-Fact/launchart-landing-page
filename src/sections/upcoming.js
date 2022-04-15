@@ -6,9 +6,12 @@ import {BsArrowLeft, BsArrowRight} from 'react-icons/bs';
 import SectionHeading from 'components/section-heading';
 import data from 'components/projects/projects.data';
 import NextLink from "next/link";
+import {getProjectData} from '../components/projects/getProjectData';
 
 const upcomingData = data.filter(function (entry) {
     return entry.upcoming === true;
+}).map((entry) => {
+    return getProjectData(entry);
 });
 
 function SlickArrow({className, onClick, control}) {
@@ -72,12 +75,21 @@ const Upcoming = () => {
                     description=""/>
                 <Slider sx={styles.grid} {...settings}>
                     {upcomingData?.map((project) => (
-                        <div key={project.id} sx={styles.projectCard}>
-                            <NextLink href={`projects/${project.key}`}>
-                                <a target="_blank">
+                        <div key={project.key} sx={styles.projectCard}>
+                            <NextLink href={`/projects/${project.key}`}>
+                                <a>
                                     <Image src={`/projects/${project.key}-big.jpg`} alt={project?.title}/>
                                 </a>
                             </NextLink>
+                            <h3>{project.title}</h3>
+                            <p>
+                                <span>Mint Date: </span>
+                                <strong>{project.mintDateStr}</strong>
+                            </p>
+                            <p>
+                                <span>Supply: </span>
+                                <strong>{project.totalSupply}</strong>
+                            </p>
                         </div>
                     ))}
                 </Slider>
@@ -94,18 +106,29 @@ const styles = {
         a: {
             display: 'block',
             borderRadius: "1rem",
-            boxShadow: '0px 0px 5px #00000096',
             transition: 'all 0.2s',
             img: {
+                transition: 'all 0.2s',
                 borderRadius: "1rem",
                 width: '100%',
                 height: 'auto',
+                boxShadow: '0px 0px 5px #00000096',
             },
             '&:hover': {
-                boxShadow: '0px 0px 15px #00000096',
-                transform: 'scale(1.05)',
+                transform: 'scale(1.035)',
+                img: {
+                    boxShadow: '0px 0px 15px #00000096',
+                }
             }
         },
+        'h2,h3,p': {
+            display: 'block',
+            p: '0',
+            m: '5px 0',
+        },
+        'h2,h3': {
+            m: '10px 0',
+        }
     },
     title: {
         maxWidth: [300, 300, 660, 500, null, 'none'],
@@ -127,7 +150,7 @@ const styles = {
         },
     },
     grid: {
-        gap: 30,
+        gap: 10,
         display: ['grid', 'grid', 'grid', 'grid', 'grid'],
         gridTemplateColumns: [
             'repeat(1, 1fr)',
