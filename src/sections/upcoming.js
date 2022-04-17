@@ -8,8 +8,12 @@ import data from 'components/projects/projects.data';
 import NextLink from "next/link";
 import {getProjectData} from '../components/projects/getProjectData';
 
+import stampUp from "../assets/images/icons/stamp-up.svg";
+import stampNew from "../assets/images/icons/stamp-new.svg";
+import stampSold from "../assets/images/icons/stamp-sold.svg";
+
 const upcomingData = data.filter(function (entry) {
-    return entry.upcoming === true;
+    return entry.status === 'upcoming';
 }).map((entry) => {
     return getProjectData(entry);
 });
@@ -77,7 +81,7 @@ const Upcoming = () => {
                     {upcomingData?.map((project) => (
                         <div key={project.key} sx={styles.projectCard}>
                             <NextLink href={`/projects/${project.key}`}>
-                                <a>
+                                <a className={project.status}>
                                     <Image src={`/projects/${project.key}-big.jpg`} alt={project?.title}/>
                                 </a>
                             </NextLink>
@@ -119,7 +123,39 @@ const styles = {
                 img: {
                     boxShadow: '0px 0px 15px #00000096',
                 }
-            }
+            },
+            '&.upcoming, &.soldout, &.new': {
+                position: 'relative',
+                '&:before': {
+                    content: "''",
+                    position: 'absolute',
+                    backgroundPosition: 'center center',
+                    backgroundSize: '100%',
+                    backgroundRepeat: 'no-repeat',
+                    left: '-20px',
+                    top: '-20px',
+                    width: '110px',
+                    height: '110px',
+                    zIndex: 5,
+                    transform: 'rotateZ(-20deg)',
+                    filter: 'drop-shadow(1px 1px 0px #000000ff)',
+                }
+            },
+            '&.upcoming': {
+                '&:before': {
+                    backgroundImage: `url(${stampUp})`,
+                },
+            },
+            '&.soldout': {
+                '&:before': {
+                    backgroundImage: `url(${stampSold})`,
+                },
+            },
+            '&.new': {
+                '&:before': {
+                    backgroundImage: `url(${stampNew})`,
+                },
+            },
         },
         'h2,h3,p': {
             display: 'block',

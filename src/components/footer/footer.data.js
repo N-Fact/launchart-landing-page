@@ -4,35 +4,33 @@ import github from 'assets/images/icons/github.png';
 import discord from 'assets/images/icons/discord.png';
 
 export const menuItems = [
-    {
-        id: 1,
-        title: '',
-        items: [
-            {
-                path: '/',
-                label: 'Home',
-            },
-        ],
-    },
-
-    /*{
-        id: 2,
-        title: '',
-        items: [
-            {
-                path: '#!',
-                label: 'Upcoming',
-            },
-        ],
-    },*/
-
+     {
+         id: 1,
+         title: '',
+         items: [
+             {
+                 path: '/projects',
+                 label: 'Projects',
+             },
+         ],
+     },
+     {
+         id: 2,
+         title: '',
+         items: [
+             {
+                 path: '/packages',
+                 label: 'Packages',
+             },
+         ],
+     },
     {
         id: 3,
         title: '',
         items: [
             {
-                path: '/#services',
-                label: 'Launchpad',
+                path: '/career',
+                label: 'Career',
             },
         ],
     },

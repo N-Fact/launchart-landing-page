@@ -12,6 +12,9 @@ import ListItem from "../../components/projects/listItem";
 import discord from 'assets/images/icons/social-discord.png';
 import web from 'assets/images/icons/social-web.png';
 import twitter from 'assets/images/icons/social-twitter.png';
+import stampUp from "../../assets/images/icons/stamp-up.svg";
+import stampSold from "../../assets/images/icons/stamp-sold.svg";
+import stampNew from "../../assets/images/icons/stamp-new.svg";
 
 
 const Project = ({slug}) => {
@@ -84,7 +87,9 @@ const Project = ({slug}) => {
                             </Breadcrumb>*/}
                             <h1>{project.title}</h1>
                             <Box sx={styles.projectCard}>
-                                <Image src={`/projects/${project.key}-big.jpg`} alt={project?.title}/>
+                                <div className={'image ' + project.status}>
+                                    <Image src={`/projects/${project.key}-big.jpg`} alt={project?.title}/>
+                                </div>
                                 <div className="desc">
                                     <p>
                                         <span>Mint Date: </span>
@@ -146,9 +151,46 @@ const styles = {
         p: '0 0 2rem 0',
         display: [null, null, null, null, 'flex', 'flex'],
         alignItems: 'flex-start',
+        '.image': {
+            flex: 1,
+            width: [null, null, null, null, '55%', '55%'],
+            position: 'relative',
+            '&.upcoming, &.soldout, &.new': {
+                position: 'relative',
+                '&:before': {
+                    content: "''",
+                    position: 'absolute',
+                    backgroundPosition: 'center center',
+                    backgroundSize: '100%',
+                    backgroundRepeat: 'no-repeat',
+                    left: '-20px',
+                    top: '-20px',
+                    width: '110px',
+                    height: '110px',
+                    zIndex: 5,
+                    transform: 'rotateZ(-20deg)',
+                    filter: 'drop-shadow(1px 1px 0px #000000ff)',
+                }
+            },
+            '&.upcoming': {
+                '&:before': {
+                    backgroundImage: `url(${stampUp})`,
+                },
+            },
+            '&.soldout': {
+                '&:before': {
+                    backgroundImage: `url(${stampSold})`,
+                },
+            },
+            '&.new': {
+                '&:before': {
+                    backgroundImage: `url(${stampNew})`,
+                },
+            },
+        },
         img: {
             borderRadius: "1rem",
-            width: [null, null, null, null, '55%', '55%'],
+            width: '100%',
             height: 'auto',
             boxShadow: '0px 0px 5px #00000096',
         },
@@ -241,7 +283,7 @@ const styles = {
             a: {
                 color: 'link',
                 textDecoration: 'none',
-                '&:hover':{
+                '&:hover': {
                     textDecoration: 'underline',
                 }
             },
@@ -256,13 +298,14 @@ const styles = {
             p: '1rem 0 3rem 0',
             '.prev,.next': {
                 position: 'relative',
-                'a:before': {
+                transform: ['scale(.7)', 'scale(.8)', 'scale(.9)', 'none', 'none', 'none'],
+                'a:after': {
                     position: 'absolute',
                     content: "''",
-                    top: '70px',
+                    top: ['40px','60px','70px','70px','70px',],
                     left: '0',
-                    width: '50px',
-                    height: '50px',
+                    width: '30px',
+                    height: '30px',
                     transform: 'rotate(135deg)',
                     boxShadow: '10px 10px 0 #E74241, 10px 10px 0 #E74241, 10px 10px 0 #E74241, 10px 10px 0 #E74241',
                     transition: 'all 0.2s',
@@ -271,22 +314,21 @@ const styles = {
             '.prev': {
                 'a': {
                     '&:hover': {
-                        '&:before': {
+                        '&:after': {
                             left: '-10px',
                         }
                     }
                 }
             },
             '.next': {
-                'a:before': {
-                    top: '70px',
+                'a:after': {
                     left: 'auto',
-                    right: '0',
+                    right: ['10px', 0, 0, 0, 0],
                     transform: 'rotate(-45deg)',
                 },
                 'a': {
                     '&:hover': {
-                        '&:before': {
+                        '&:after': {
                             right: '-10px',
                         }
                     }

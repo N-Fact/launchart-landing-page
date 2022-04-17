@@ -3,15 +3,16 @@ export default [
         key: 'dwarf-knights',
         title: 'Dwarf Knights',
         'description': `
-            Dwarf Knights is a fantastic, open-world MMORPG game.
-            Game is a part of a universe that has a gamer-focused 
-            economy and is backed up by Avalanche and its subnets.
+           OG Sale costs 1 AVAX🔺, when minted more than one, the price will automatically decrease to 0.75 AVAX🔺
+           <br><br>
+           WL Sale costs 1.25 AVAX🔺, when minted more than one, the price will automatically decrease to 1 AVAX🔺
+           <br><br>
+           Public Sale costs 1.5 AVAX🔺 & will be open for everyone. 10 Dwarf Knights NFTs is the limit per transaction. 
         `,
         mintDate: '2022-04-26',
-        mintPrice: '1.5 🔺',
+        mintPrice: 'Details In Description',
         totalSupply: 6666,
-        upcoming: true,
-        soldOut: false,
+        status: 'upcoming',
         links: [
             {key: 'twitter', link: 'https://twitter.com/DwarfKnightNft'},
             {key: 'discord', link: 'https://discord.gg/dwarfknights'},
@@ -29,8 +30,7 @@ export default [
         mintDate: 'TBA',
         mintPrice: 'TBA',
         totalSupply: 555,
-        upcoming: true,
-        soldOut: false,
+        status: 'upcoming',
         links: [
             {key: 'twitter', link: 'https://twitter.com/dickheadscrypto'},
             {key: 'discord', link: 'https://discord.gg/cryptodickheads'},
@@ -47,8 +47,7 @@ export default [
         mintDate: 'TBA',
         mintPrice: 'TBA',
         totalSupply: 7777,
-        upcoming: true,
-        soldOut: false,
+        status: 'new',
         links: [
             {key: 'twitter', link: 'https://twitter.com/dickheadscrypto'},
             {key: 'discord', link: 'https://discord.gg/cryptodickheads'},
@@ -65,8 +64,7 @@ export default [
         mintDate: 'TBA',
         mintPrice: 'TBA',
         totalSupply: 2595,
-        upcoming: false,
-        soldOut: true,
+        status: 'soldout',
         links: [
             {key: 'twitter', link: 'https://twitter.com/dickheadscrypto'},
             {key: 'discord', link: 'https://discord.gg/cryptodickheads'},
@@ -83,8 +81,7 @@ export default [
         mintDate: 'TBA',
         mintPrice: 'TBA',
         totalSupply: 5472,
-        upcoming: false,
-        soldOut: false,
+        status: 'none',
         links: [
             {key: 'twitter', link: 'https://twitter.com/dickheadscrypto'},
             {key: 'discord', link: 'https://discord.gg/cryptodickheads'},
@@ -101,8 +98,7 @@ export default [
         mintDate: 'TBA',
         mintPrice: 'TBA',
         totalSupply: 365,
-        upcoming: false,
-        soldOut: true,
+        status: 'soldout',
         links: [
             {key: 'twitter', link: 'https://twitter.com/dickheadscrypto'},
             {key: 'discord', link: 'https://discord.gg/cryptodickheads'},
