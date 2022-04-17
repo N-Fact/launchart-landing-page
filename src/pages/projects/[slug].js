@@ -103,6 +103,9 @@ const Project = ({slug}) => {
                                         <span>Supply: </span>
                                         <strong>{project.totalSupply}</strong>
                                     </p>
+                                    <p className="kyc">
+                                        <strong>KYC Verified</strong>
+                                    </p>
                                     <Box sx={styles.links}>
                                         <Links project={project}/>
                                     </Box>
@@ -207,6 +210,31 @@ const styles = {
             },
             '.description': {
                 p: "1rem 0 0 0"
+            },
+            '.kyc': {
+                span: {},
+                strong: {
+                    m: '1rem 0 0 0',
+                    p: '1px 35px 1px 15px',
+                    position: 'relative',
+                    display: 'inline-block',
+                    borderRadius: '10px',
+                    background: '#16982b',
+                    '&:after': {
+                        content: "''",
+                        display: 'block',
+                        position: 'absolute',
+                        background: 'transparent',
+                        top: '2px',
+                        right: '13px',
+                        width: '7px',
+                        height: '13px',
+                        borderRadius: 0,
+                        border: 'solid #fff',
+                        borderWidth: '0 2px 2px 0',
+                        transform: 'rotate(45deg)',
+                    },
+                },
             }
         },
     },
@@ -302,7 +330,7 @@ const styles = {
                 'a:after': {
                     position: 'absolute',
                     content: "''",
-                    top: ['40px','60px','70px','70px','70px',],
+                    top: ['40px', '60px', '70px', '70px', '70px',],
                     left: '0',
                     width: '30px',
                     height: '30px',

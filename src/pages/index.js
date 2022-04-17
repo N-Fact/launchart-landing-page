@@ -11,6 +11,7 @@ import Partners from "../sections/partners";
 import Upcoming from "../sections/upcoming";
 
 export default function IndexPage() {
+
     return (
         <ThemeProvider theme={theme}>
             <Layout>
