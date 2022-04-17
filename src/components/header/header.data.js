@@ -2,11 +2,10 @@ export default [
   /*{
     path: '/',
     label: 'Home',
-  },*/
-  /*{
+  },{
     path: '',
     label: 'Upcoming',
-  },*/
+  },
   {
     path: '/#services',
     label: 'Launchpad',
@@ -15,14 +14,19 @@ export default [
     path: '/#features',
     label: 'Features',
   },
+   */
   {
+    path: '/projects',
+    label: 'Projects',
+  },
+  /*{
     path: '/#team',
     label: 'About Us',
   },
   {
     path: '/#partners',
     label: 'Partners',
-  },
+  },*/
   {
     path: '/packages',
     label: 'Packages',
