@@ -16,7 +16,6 @@ import stampUp from "../../assets/images/icons/stamp-up.svg";
 import stampSold from "../../assets/images/icons/stamp-sold.svg";
 import stampNew from "../../assets/images/icons/stamp-new.svg";
 
-
 const Project = ({slug}) => {
     // All Data
     const projectsData = data.map((entry) => {

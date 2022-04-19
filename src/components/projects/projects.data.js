@@ -20,12 +20,13 @@ export default [
         ],
     },
     {
-        key: 'dickheads-special',
-        title: 'Dickheads Special Collection',
+        key: 'chickheads',
+        title: 'Chickheads',
         'description': `
-            Crypto Dickheads is an NFT collection of 5,555 ai generated unique dickheads.
-            They are nostalgic flashback to our childhood, the glorious 90's.
-            Created with over 300 attributes, dickheads are coming to mess with metaverse!
+            555 Special Chicks are coming to Avalanche! 
+            Be careful with them because they are so gorgeous.
+            <br><br>
+            Chickheads will be the unique collection of Crypto Dickheads and launched by LaunchArt!
         `,
         mintDate: 'TBA',
         mintPrice: 'TBA',
@@ -37,7 +38,7 @@ export default [
             {key: 'web', link: 'https://cryptodickheads.com'},
         ],
     },
-    {
+   /* {
         key: 'test1',
         title: 'Test 1',
         'description': `
@@ -104,5 +105,5 @@ export default [
             {key: 'discord', link: 'https://discord.gg/cryptodickheads'},
             {key: 'web', link: 'https://cryptodickheads.com'},
         ],
-    },
+    },*/
 ];
