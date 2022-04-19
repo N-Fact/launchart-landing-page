@@ -11,6 +11,7 @@ import Partners from "../sections/partners";
 import Upcoming from "../sections/upcoming";
 
 export default function IndexPage() {
+
     return (
         <ThemeProvider theme={theme}>
             <Layout>
@@ -19,7 +20,7 @@ export default function IndexPage() {
                     description="All Projects in Launchart have to Doxx and KYC themselves. We will not launch unknown projects."
                 />
                 <Banner/>
-                {/*<Upcoming/>*/}
+                <Upcoming/>
                 <Services/>
                 {/* <WorkHard /> */}
                 <UltimateFeatures/>

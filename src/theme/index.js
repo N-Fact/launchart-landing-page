@@ -19,7 +19,8 @@ export default {
         muted: '#c3c3c3', // muted color
         accent: '#609', // a contrast color for emphasizing UI
         dark: '#10132d',
-        link: '#4f96ff', // default link color
+        link: '#e74241', // default link color
+        linkHover: '#d53130', // default link color
         textShadow: '#1b2128', // default link color
         warning: '#ffa114',
         footerBg: '#ddd',
@@ -38,7 +39,8 @@ export default {
                 textShadow: '#000', // default link color
                 warning: '#ffa114',
                 footerBg: '#0f1216',
-                link: '#4f96ff', // default link color
+                // link: '#4f96ff', // default link color
+                // linkHover: '#79afff', // default link color
             },
         },
     },
@@ -131,7 +133,7 @@ export default {
         },
         project: {
             pt: [6, null, null, 8, 7, 6, 7],
-            pb: [6, 6, 7, 8, '5rem', '5rem'],
+            pb: [6, 6, 7, 8, '2rem', '1rem'],
             backgroundColor: 'backgroundThird',
         },
         partners: {
@@ -308,7 +310,6 @@ export default {
             },
         },
     },
-
     badges: {
         primary: {
             color: 'background',
@@ -324,7 +325,6 @@ export default {
             boxShadow: 'inset 0 0 0 1px',
         },
     },
-
     styles: {
         // To add base, top-level styles to the <body> element, use theme.styles.root.
         root: {

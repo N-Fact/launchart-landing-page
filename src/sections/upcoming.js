@@ -6,6 +6,17 @@ import {BsArrowLeft, BsArrowRight} from 'react-icons/bs';
 import SectionHeading from 'components/section-heading';
 import data from 'components/projects/projects.data';
 import NextLink from "next/link";
+import {getProjectData} from '../components/projects/getProjectData';
+
+import stampUp from "../assets/images/icons/stamp-up.svg";
+import stampNew from "../assets/images/icons/stamp-new.svg";
+import stampSold from "../assets/images/icons/stamp-sold.svg";
+
+const upcomingData = data.filter(function (entry) {
+    return entry.status === 'upcoming';
+}).map((entry) => {
+    return getProjectData(entry);
+});
 
 function SlickArrow({className, onClick, control}) {
     return (
@@ -25,7 +36,7 @@ function SlickArrow({className, onClick, control}) {
 }
 
 const settings = {
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     speed: 500,
     nextArrow: <SlickArrow control="next"/>,
@@ -38,16 +49,16 @@ const settings = {
         {
             breakpoint: 10000,
             settings: {
-                infinite: true,
+                infinite: false,
                 slidesToShow: 2,
                 slidesToScroll: 1,
             },
         },
         {
-            breakpoint: 768,
+            breakpoint: 1024,
             settings: {
                 infinite: false,
-                slidesToShow: 2,
+                slidesToShow: 1,
                 slidesToScroll: 1,
             },
         },
@@ -59,27 +70,36 @@ const settings = {
 };
 
 const Upcoming = () => {
-    return (
+    return upcomingData.length ? (
         <Box as="section" id="upcoming" sx={styles.section} variant="section.project">
             <Container>
                 <SectionHeading
                     sx={styles.heading}
-                    title="Upcoming"
+                    title="Upcoming Launches"
                     description=""/>
                 <Slider sx={styles.grid} {...settings}>
-                    {data?.map((project) => (
-                        <div key={project.id} sx={styles.projectCard}>
-                            <NextLink href={`projects/${project.key}`}>
-                                <a target="_blank">
+                    {upcomingData?.map((project) => (
+                        <div key={project.key} sx={styles.projectCard}>
+                            <NextLink href={`/projects/${project.key}`}>
+                                <a className={project.status}>
                                     <Image src={`/projects/${project.key}-big.jpg`} alt={project?.title}/>
                                 </a>
                             </NextLink>
+                            <h3>{project.title}</h3>
+                            <p>
+                                <span>Mint Date: </span>
+                                <strong>{project.mintDateStr}</strong>
+                            </p>
+                            <p>
+                                <span>Supply: </span>
+                                <strong>{project.totalSupply}</strong>
+                            </p>
                         </div>
                     ))}
                 </Slider>
             </Container>
         </Box>
-    );
+    ) : <></>;
 };
 
 export default Upcoming;
@@ -87,8 +107,63 @@ export default Upcoming;
 const styles = {
     projectCard: {
         p: '2rem',
-        img: {
-            borderRadius: "1rem"
+        a: {
+            display: 'block',
+            borderRadius: "1rem",
+            transition: 'all 0.2s',
+            img: {
+                transition: 'all 0.2s',
+                borderRadius: "1rem",
+                width: '100%',
+                height: 'auto',
+                boxShadow: '0px 0px 5px #00000096',
+            },
+            '&:hover': {
+                transform: 'scale(1.035)',
+                img: {
+                    boxShadow: '0px 0px 15px #00000096',
+                }
+            },
+            '&.upcoming, &.soldout, &.new': {
+                position: 'relative',
+                '&:before': {
+                    content: "''",
+                    position: 'absolute',
+                    backgroundPosition: 'center center',
+                    backgroundSize: '100%',
+                    backgroundRepeat: 'no-repeat',
+                    left: '-20px',
+                    bottom: '-20px',
+                    width: '110px',
+                    height: '110px',
+                    zIndex: 5,
+                    transform: 'rotateZ(-20deg)',
+                    filter: 'drop-shadow(1px 1px 0px #000000ff)',
+                }
+            },
+            '&.upcoming': {
+                '&:before': {
+                    backgroundImage: `url(${stampUp})`,
+                },
+            },
+            '&.soldout': {
+                '&:before': {
+                    backgroundImage: `url(${stampSold})`,
+                },
+            },
+            '&.new': {
+                '&:before': {
+                    backgroundImage: `url(${stampNew})`,
+                },
+            },
+        },
+        'h2,h3,p': {
+            display: 'block',
+            p: '0',
+            m: '5px 0',
+        },
+        'h2,h3': {
+            m: '10px 0',
         }
     },
     title: {
@@ -111,22 +186,27 @@ const styles = {
         },
     },
     grid: {
-        gap: 30,
+        gap: 10,
         display: ['grid', 'grid', 'grid', 'grid', 'grid'],
         gridTemplateColumns: [
             'repeat(1, 1fr)',
             'repeat(1, 1fr)',
             'repeat(1, 1fr)',
-            'repeat(2, 1fr)',
+            'repeat(1, 1fr)',
             'repeat(1, 1fr)',
         ],
         m: [0, 0, 0, '0 -15px', 0],
+        '.slick-track': {
+            mr: 'auto',
+            ml: 'auto',
+        }
     },
     paginationButton: {
         minHeight: '30px',
         padding: 0,
         position: 'absolute',
-        bottom: '-60px',
+        bottom: 'auto',
+        left: 'auto',
         ':focus': {
             outline: '0 none',
         },
@@ -134,18 +214,23 @@ const styles = {
             transition: 'all 0.2s ease-in-out 0s',
         },
         '&.slick-disabled': {
-            color: '#bbc7d7',
+            color: 'muted',
             svg: {
                 transform: 'scale(0.8)',
             },
         },
         '&.slick-prev': {
-            left: 'calc(50% - 16px)',
-            transform: 'translateX(-50%)',
+            //left: 'calc(50% - 16px)',
+            //transform: 'translateX(-50%)',
+            right: '6rem',
+            top: '-2rem',
         },
         '&.slick-next': {
-            transform: 'translateX(50%)',
-            right: 'calc(50% - 16px)',
+            //transform: 'translateX(50%)',
+            //right: 'calc(50% - 16px)',
+            right: '2rem',
+            top: '-2rem',
         },
     },
+
 };

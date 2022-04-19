@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import {jsx, Box, Container, Flex, Button} from 'theme-ui';
+import {jsx, Box, Container, Flex, Button, useColorMode} from 'theme-ui';
 import Sticky from 'react-stickynode';
 import Logo from 'components/logo';
 import {NavLink} from 'components/link';
@@ -9,7 +9,9 @@ import {DrawerProvider} from 'contexts/drawer/drawer-provider';
 import DrawerNav from './drawer-nav';
 import menuItems from './header.data';
 
+
 export default function Header() {
+
     return (
         <DrawerProvider>
             <Box sx={styles.headerWrapper}>
@@ -47,9 +49,10 @@ const styles = {
             left: 0,
             right: 0,
             py: 20,
-            transition: 'all 0.3s ease-in-out 0s',
+            //transition: 'all 0.3s ease-in-out 0s',
+            backgroundColor: 'background',
             '&.is-mobile-menu': {
-                backgroundColor: 'white',
+                backgroundColor: 'background',
             },
         },
         '.is-sticky': {
