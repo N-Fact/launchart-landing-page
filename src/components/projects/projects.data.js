@@ -42,7 +42,7 @@ export default [
         key: 'nuigurumi',
         title: 'Nuigurumi',
         'description': `
-            Nuigurumi is a collection of delightfully cute friends living on the Avax🔺 network. 
+            Nuigurumi is a collection of delightfully cute friends living on The Avalanche 🔺 Network. 
             Our vision is to create a delightful family-friendly brand that anyone can enjoy in both the physical and digital worlds. 
             Nuigurumi are universally loved characters who will bring out the values of kindness and bring joy to the world.
         `,
