@@ -166,7 +166,7 @@ const styles = {
                     backgroundSize: '100%',
                     backgroundRepeat: 'no-repeat',
                     left: '-20px',
-                    top: '-20px',
+                    bottom: '-20px',
                     width: '110px',
                     height: '110px',
                     zIndex: 5,
