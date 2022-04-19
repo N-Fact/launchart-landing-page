@@ -25,7 +25,7 @@ export default [
         'description': `
             555 Special Chicks are coming to Avalanche! 
             Be careful with them because they are so gorgeous.
-            <br><br>
+            
             Chickheads will be the unique collection of Crypto Dickheads and launched by LaunchArt!
         `,
         mintDate: 'TBA',
