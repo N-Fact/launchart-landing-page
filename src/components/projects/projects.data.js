@@ -38,6 +38,24 @@ export default [
             {key: 'web', link: 'https://cryptodickheads.com'},
         ],
     },
+    {
+        key: 'nuigurumi',
+        title: 'Nuigurumi',
+        'description': `
+            Nuigurumi is a collection of delightfully cute friends living on the Avax🔺 network. 
+            Our vision is to create a delightful family-friendly brand that anyone can enjoy in both the physical and digital worlds. 
+            Nuigurumi are universally loved characters who will bring out the values of kindness and bring joy to the world.
+        `,
+        mintDate: 'TBA',
+        mintPrice: 'TBA',
+        totalSupply: 'TBA',
+        status: 'new',
+        links: [
+            {key: 'twitter', link: 'https://twitter.com/nuiguruminft'},
+            // {key: 'discord', link: 'https://discord.gg/cryptodickheads'},
+            {key: 'web', link: 'https://nuiguruminft.com/'},
+        ],
+    },
    /* {
         key: 'test1',
         title: 'Test 1',
