@@ -6,7 +6,7 @@ import {BsArrowLeft, BsArrowRight} from 'react-icons/bs';
 import SectionHeading from 'components/section-heading';
 import BlogPost from 'components/cards/blog-post';
 
-import leeroy from 'assets/images/blog/leeroy.png';
+import leeroy from 'assets/images/blog/leeroy-jenkins.png';
 import uykusuz from 'assets/images/blog/uykusuz.png';
 import aertas from 'assets/images/blog/aertas.png';
 

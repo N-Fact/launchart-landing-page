@@ -59,7 +59,7 @@ export default function IndexPage() {
         <ThemeProvider theme={theme}>
             <Layout>
                 <SEO
-                    title="LaunchArt | Your Launchpad In Avalanche"
+                    title="NFT Projects | LaunchArt"
                     description="All Projects in Launchart have to Doxx and KYC themselves. We will not launch unknown projects."
                 />
                 <Box sx={styles.projects}>
