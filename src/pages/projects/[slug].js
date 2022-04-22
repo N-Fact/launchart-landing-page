@@ -1,5 +1,6 @@
 import React from 'react';
-import data from 'components/projects/projects.data';
+import {useState, useEffect} from "react";
+import projects from 'components/projects/projects.data';
 import NextLink from "next/link";
 import {getProjectData} from '../../components/projects/getProjectData';
 import ErrorPage from 'next/error'
@@ -16,9 +17,46 @@ import stampUp from "../../assets/images/icons/stamp-up.svg";
 import stampSold from "../../assets/images/icons/stamp-sold.svg";
 import stampNew from "../../assets/images/icons/stamp-new.svg";
 
+/** Web3 */
+const Web3 = require('web3');
+const provider = new Web3.providers.HttpProvider('https://api.avax.network/ext/bc/C/rpc');
+const web3 = new Web3(provider);
+const abi = require('../../components/projects/abi.json');
+const address = '0x1C6F5d2C6947753B668D63CC4ce8f9A4907CB220';
+const contract = new web3.eth.Contract(abi, address);
+/** End Web3 */
+
 const Project = ({slug}) => {
+    const [projectsChangedData, setProjects] = useState(projects)
+    const [isLoading, setLoading] = useState(true)
+
+    useEffect(() => {
+        //console.log('usd:', usd);
+        const sendPromise = contract.methods.getLatestPrice().call().then(function (transaction) {
+            //console.log("transaction", transaction);
+            if (transaction > 0) {
+                //console.log(Number(transaction) / 100000000);
+                let price = 0, usdPrice = 0;
+                for (let i in projectsChangedData) {
+                    price = projectsChangedData[i].mintPrice;
+                    if (!isNaN(price)) {
+                        usdPrice = (Number(transaction) / 100000000 * price).toFixed(2)
+                        projects[i].mintPrice = price.toString() + ' AVAX 🔺 ( ' + usdPrice + ' USD )'
+                    }
+                    setProjects(projects);
+                    setLoading(false);
+                }
+            }
+        });
+    }, [])
+
+    if (isLoading) {
+        return (<></>);
+    }
+
+
     // All Data
-    const projectsData = data.map((entry) => {
+    const projectsData = projectsChangedData.map((entry) => {
         return getProjectData(entry);
     });
 
@@ -90,6 +128,7 @@ const Project = ({slug}) => {
                                     <Image src={`/projects/${project.key}-big.jpg`} alt={project?.title}/>
                                 </div>
                                 <div className="desc">
+
                                     <p>
                                         <span>Mint Date: </span>
                                         <strong>{project.mintDateStr}</strong>

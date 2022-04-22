@@ -10,7 +10,7 @@ export default [
            Public Sale costs 1.5 AVAX🔺 & will be open for everyone. 10 Dwarf Knights NFTs is the limit per transaction. 
         `,
         mintDate: '2022-04-26',
-        mintPrice: 'Details In Description',
+        mintPrice: 1.5,
         totalSupply: 6666,
         status: 'upcoming',
         links: [
@@ -29,7 +29,7 @@ export default [
             Chickheads will be the unique collection of Crypto Dickheads and launched by LaunchArt!
         `,
         mintDate: 'TBA',
-        mintPrice: 'TBA',
+        mintPrice: 1,
         totalSupply: 555,
         status: 'upcoming',
         links: [
