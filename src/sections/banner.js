@@ -82,7 +82,7 @@ const styles = {
         marginBottom: '5rem',
         h1: {
             color: 'text',
-            fontFamily: 'Roboto, sans-serif',
+            fontFamily: 'body',
             fontWeight: 600,
             fontSize: ['34px', '34px', '34px', '44px', '40px', '49px', '62px'],
             lineHeight: [1.26, 1.26, 1.11, 1.4, 1.11],
@@ -91,7 +91,7 @@ const styles = {
         },
         h2: {
             color: 'text',
-            fontFamily: 'Roboto, sans-serif',
+            fontFamily: 'body',
             fontWeight: 300,
             fontSize: ['24px', '24px', '24px', '24px', '24px', '49px', '62px'],
             lineHeight: [1.26, 1.26, 1.11, 1.4, 1.11],
@@ -126,7 +126,7 @@ const styles = {
         },
         h2: {
             color: 'text',
-            fontFamily: 'Roboto, sans-serif',
+            fontFamily: 'body',
             fontWeight: 300,
             fontSize: ['24px', '24px', '24px', '24px', '24px', '49px', '62px'],
             lineHeight: [1.26, 1.26, 1.11, 1.4, 1.11],
@@ -139,7 +139,7 @@ const styles = {
         justifyContent: ['flex-start'],
         h1: {
             color: 'text',
-            fontFamily: 'Roboto, sans-serif',
+            fontFamily: 'body',
             fontWeight: 600,
             fontSize: ['20px'],
             lineHeight: [1.26],
@@ -175,7 +175,7 @@ const styles = {
         },
         h1: {
             color: 'text',
-            fontFamily: 'Roboto, sans-serif',
+            fontFamily: 'body',
             fontWeight: 600,
             fontSize: ['22px'],
             lineHeight: [1.26],

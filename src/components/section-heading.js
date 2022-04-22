@@ -25,7 +25,7 @@ const styles = {
     margin: '0 auto 40px',
   },
   title: {
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: 'body',
     fontWeight: 600,
     fontSize: ['24px', '32px', null, null, null, null, '40px'],
     lineHeight: [1.33, 1.33, 1.26],
