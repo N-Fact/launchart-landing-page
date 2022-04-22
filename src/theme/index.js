@@ -45,11 +45,11 @@ export default {
         },
     },
     fonts: {
-        body: 'Roboto, sans-serif',
+        body: 'semplicitapro, Roboto, sans-serif',
         // body:
         //   'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-        heading: 'Roboto, sans-serif',
-        headingSerif: 'Roboto, sans-serif',
+        heading: 'semplicitapro, Roboto, sans-serif',
+        headingSerif: 'semplicitapro, Roboto, sans-serif',
         monospace: 'Menlo, monospace',
     },
     fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],

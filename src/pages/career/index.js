@@ -306,7 +306,7 @@ const styles = {
         marginBottom: '1rem',
         h1: {
             color: 'text',
-            fontFamily: 'Roboto, sans-serif',
+            fontFamily: 'body',
             fontWeight: 600,
             fontSize: ['34px', '34px', '34px', '44px', '40px', '49px', '62px'],
             lineHeight: [1.26, 1.26, 1.11, 1.4, 1.11],
